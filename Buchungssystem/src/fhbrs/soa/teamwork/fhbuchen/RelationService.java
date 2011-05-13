@@ -47,8 +47,8 @@ public class RelationService {
 	 * 
 	 * @return The list of relations.
 	 */
-	public List<Relation> listInvoicesWithoutRelation() {
-		List<Relation> result = new ArrayList<Relation>();
+	public List<Invoice> listInvoicesWithoutRelation() {
+		List<Invoice> result = new ArrayList<Invoice>();
 		return result;
 	}
 
@@ -57,8 +57,8 @@ public class RelationService {
 	 * 
 	 * @return The list of relations.
 	 */
-	public List<Relation> listBillsWithoutRelation() {
-		List<Relation> result = new ArrayList<Relation>();
+	public List<Bill> listBillsWithoutRelation() {
+		List<Bill> result = new ArrayList<Bill>();
 		return result;
 	}
 
