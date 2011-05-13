@@ -5,6 +5,11 @@ import java.util.List;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import org.eclipse.persistence.internal.jpa.EntityManagerFactoryProvider;
 
 /**
  * The RelationServive allows you to manipulate and create Relations.
@@ -13,6 +18,13 @@ import javax.jws.WebService;
  */
 @WebService
 public class RelationSystem {
+	private EntityManager em;
+	
+	public RelationSystem() {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("localhost");
+		em = emf.createEntityManager();
+	}
+	
 	/**
 	 * Lists all relations saved in the database.
 	 * 

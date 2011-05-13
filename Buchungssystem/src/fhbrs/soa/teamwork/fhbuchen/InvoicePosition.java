@@ -1,6 +1,12 @@
 package fhbrs.soa.teamwork.fhbuchen;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class InvoicePosition {
+	@Id
+	int positionId;
 	double weight;
 	int quantity;
 	String description;

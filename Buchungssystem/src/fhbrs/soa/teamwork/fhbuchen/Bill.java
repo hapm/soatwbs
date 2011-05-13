@@ -3,11 +3,21 @@ package fhbrs.soa.teamwork.fhbuchen;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Bill {
+	@Id
+	int billId;
 	int billNr;
 	Date date;
 	String author, reciever;
 	List<BillPosition> positions;
+	
+	public Bill() {
+		
+	}
 
 	public Bill(int billNr, Date date, String author, String reciever,
 			List<BillPosition> positions) {

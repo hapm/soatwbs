@@ -3,6 +3,7 @@ package fhbrs.soa.teamwork.fhbuchen;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  * Describes a Relation between a Bill and an Invoice.
@@ -11,6 +12,9 @@ import javax.persistence.Entity;
  */
 @Entity
 public class Relation {
+	@Id
+	int relationId;
+	
 	/**
 	 * Saves the bill instance.
 	 */

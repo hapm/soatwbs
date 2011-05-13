@@ -3,7 +3,13 @@ package fhbrs.soa.teamwork.fhbuchen;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Invoice {
+	@Id
+	int invoiceId;
 	int invoiceNr;
 	String author;
 	String reciever;
