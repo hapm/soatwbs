@@ -57,8 +57,8 @@ public class RelationService {
 	 * @return The list of relations.
 	 */
 	@WebMethod
-	public List<Relation> listInvoicesWithoutRelation(String user) {
-		List<Relation> result = new ArrayList<Relation>();
+	public List<Invoice> listInvoicesWithoutRelation() {
+		List<Invoice> result = new ArrayList<Invoice>();
 		//TODO receive the invoices from the invoice service.
 		return result;
 	}
@@ -70,8 +70,8 @@ public class RelationService {
 	 * @return The list of relations.
 	 */
 	@WebMethod
-	public List<Relation> listBillsWithoutRelation(String user) {
-		List<Relation> result = new ArrayList<Relation>();
+	public List<Bill> listBillsWithoutRelation() {
+		List<Bill> result = new ArrayList<Bill>();
 		//TODO receive the bills from the Bill service.
 		return result;
 	}
