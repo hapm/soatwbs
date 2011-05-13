@@ -81,5 +81,6 @@ public class RelationService {
 	 * @param rel The relation that was checked.
 	 */
 	public void checked(String user, Relation rel) {
+		rel.check(user);
 	}
 }
