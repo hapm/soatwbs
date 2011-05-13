@@ -2,11 +2,14 @@ package fhbrs.soa.teamwork.fhbuchen;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+
 /**
  * Describes a Relation between a Bill and an Invoice.
  * 
  * @author Markus
  */
+@Entity
 public class Relation {
 	/**
 	 * Saves the bill instance.

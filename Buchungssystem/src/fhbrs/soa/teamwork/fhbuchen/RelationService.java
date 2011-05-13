@@ -3,6 +3,7 @@ package fhbrs.soa.teamwork.fhbuchen;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.jws.WebMethod;
 import javax.jws.WebService;
 
 /**
@@ -17,8 +18,23 @@ public class RelationService {
 	 * 
 	 * @return The list of relations.
 	 */
+	@WebMethod
 	public List<Relation> listAllRelations() {
 		List<Relation> result = new ArrayList<Relation>();
+		//TODO receive the list of relations from the database
+		return result;
+	}
+
+	/**
+	 * Lists all relations saved in the database.
+	 * 
+	 * @param user The user that want s to receive the list.
+	 * @return The list of relations.
+	 */
+	@WebMethod
+	public List<Relation> listUncheckedRelations(String user) {
+		List<Relation> result = new ArrayList<Relation>();
+		//TODO receive the list of relations from the database
 		return result;
 	}
 
@@ -27,38 +43,36 @@ public class RelationService {
 	 * 
 	 * @return The list of relations.
 	 */
-	public List<Relation> listUncheckedRelations() {
+	@WebMethod
+	public List<Relation> listCheckedRelations(String user) {
 		List<Relation> result = new ArrayList<Relation>();
+		//TODO receive the list of relations from the database
 		return result;
 	}
 
 	/**
 	 * Lists all relations saved in the database.
 	 * 
+	 * @param user The user that want s to receive the list.
 	 * @return The list of relations.
 	 */
-	public List<Relation> listCheckedRelations() {
+	@WebMethod
+	public List<Relation> listInvoicesWithoutRelation(String user) {
 		List<Relation> result = new ArrayList<Relation>();
+		//TODO receive the invoices from the invoice service.
 		return result;
 	}
 
 	/**
 	 * Lists all relations saved in the database.
 	 * 
+	 * @param user The user that want s to receive the list.
 	 * @return The list of relations.
 	 */
-	public List<Relation> listInvoicesWithoutRelation() {
+	@WebMethod
+	public List<Relation> listBillsWithoutRelation(String user) {
 		List<Relation> result = new ArrayList<Relation>();
-		return result;
-	}
-
-	/**
-	 * Lists all relations saved in the database.
-	 * 
-	 * @return The list of relations.
-	 */
-	public List<Relation> listBillsWithoutRelation() {
-		List<Relation> result = new ArrayList<Relation>();
+		//TODO receive the bills from the Bill service.
 		return result;
 	}
 
@@ -69,9 +83,22 @@ public class RelationService {
 	 * @param invoice The invoice to assign to the relation.
 	 * @return The created relation.
 	 */
+	@WebMethod
 	public Relation createRelation(Bill bill, Invoice invoice) {
 		Relation rel = new Relation(bill, invoice);
+		//TODO save the new relation to the database
 		return rel;
+	}
+	
+	/**
+	 * Updates the given relation to the new values.
+	 * 
+	 * @param user The user that want s to receive the list.
+	 * @param rel The relation to update.
+	 */
+	@WebMethod
+	public void updateRelation(String user, Relation rel) {
+		//TODO implement update
 	}
 	
 	/**
@@ -80,7 +107,9 @@ public class RelationService {
 	 * @param user The name of the user that checked the relation. 
 	 * @param rel The relation that was checked.
 	 */
+	@WebMethod
 	public void checked(String user, Relation rel) {
 		rel.check(user);
+		updateRelation(user, rel);
 	}
 }
