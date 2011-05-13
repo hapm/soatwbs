@@ -12,7 +12,7 @@ import javax.jws.WebService;
  * @author Markus
  */
 @WebService
-public class RelationService {
+public class RelationSystem {
 	/**
 	 * Lists all relations saved in the database.
 	 * 
