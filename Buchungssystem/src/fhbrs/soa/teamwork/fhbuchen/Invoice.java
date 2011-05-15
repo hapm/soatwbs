@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Invoice {
@@ -13,6 +15,7 @@ public class Invoice {
 	int invoiceNr;
 	String author;
 	String reciever;
+	@Temporal(TemporalType.DATE)
 	Date date;
 	List<InvoicePosition> positions;
 
