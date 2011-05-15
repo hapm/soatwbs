@@ -14,9 +14,9 @@ public class Bill {
 	Date date;
 	String author, reciever;
 	List<BillPosition> positions;
-	
+
 	public Bill() {
-		
+
 	}
 
 	public Bill(int billNr, Date date, String author, String reciever,
@@ -58,5 +58,13 @@ public class Bill {
 
 	void setBillNr(int billNr) {
 		this.billNr = billNr;
+	}
+
+	public List<BillPosition> getPositions() {
+		return positions;
+	}
+
+	public void setPositions(List<BillPosition> positions) {
+		this.positions = positions;
 	}
 }

@@ -11,13 +11,15 @@ public class BillPosition {
 	int quantity;
 	String description;
 	int posNum;
+	int articleNr;
 
 	public BillPosition(double amount, int quantity, String description,
-			int posNum) {
+			int posNum, int articleNr) {
 		this.amount = amount;
 		this.quantity = quantity;
 		this.description = description;
 		this.posNum = posNum;
+		this.articleNr = articleNr;
 	}
 
 	double getAmount() {
@@ -38,5 +40,13 @@ public class BillPosition {
 
 	void setPosNum(int num) {
 		this.posNum = num;
+	}
+
+	public int getArticleNr() {
+		return articleNr;
+	}
+
+	public void setArticleNr(int articleNr) {
+		this.articleNr = articleNr;
 	}
 }
