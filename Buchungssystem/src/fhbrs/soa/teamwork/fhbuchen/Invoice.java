@@ -2,9 +2,13 @@ package fhbrs.soa.teamwork.fhbuchen;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Invoice {
@@ -13,11 +17,19 @@ public class Invoice {
 	int invoiceNr;
 	String author;
 	String reciever;
+	
+	@Temporal(TemporalType.DATE)
 	Date date;
-	List<InvoicePosition> positions;
+	
+	@OneToMany
+	Set<InvoicePosition> positions;
+	
+	public Invoice() {
+		
+	}
 
 	public Invoice(int billNr, Date date, String author, String reciever,
-			List<InvoicePosition> positions) {
+			Set<InvoicePosition> positions) {
 	}
 
 	public int getInvoiceNr() {
@@ -52,11 +64,11 @@ public class Invoice {
 		this.date = date;
 	}
 
-	public List<InvoicePosition> getPositions() {
+	public Set<InvoicePosition> getPositions() {
 		return positions;
 	}
 
-	public void setPositions(List<InvoicePosition> positions) {
+	public void setPositions(Set<InvoicePosition> positions) {
 		this.positions = positions;
 	}
 }

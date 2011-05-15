@@ -9,8 +9,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import org.eclipse.persistence.internal.jpa.EntityManagerFactoryProvider;
-
 /**
  * The RelationServive allows you to manipulate and create Relations.
  * 

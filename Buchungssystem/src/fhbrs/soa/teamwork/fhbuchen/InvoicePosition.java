@@ -2,6 +2,7 @@ package fhbrs.soa.teamwork.fhbuchen;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class InvoicePosition {
@@ -11,7 +12,14 @@ public class InvoicePosition {
 	int quantity;
 	String description;
 	int posNum;
+	
+	@ManyToOne
+	Invoice invoice;
 
+	public InvoicePosition() {
+		
+	}
+	
 	public InvoicePosition(double weight, int quanitity, String description,
 			int posNum) {
 		this.weight = weight;

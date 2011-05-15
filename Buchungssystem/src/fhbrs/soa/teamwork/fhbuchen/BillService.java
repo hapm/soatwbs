@@ -2,18 +2,19 @@ package fhbrs.soa.teamwork.fhbuchen;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 public class BillService {
 	Bill searchBill(int billNr) {
 		return null;
 	}
 
-	List<Bill> listBills() {
+	Set<Bill> listBills() {
 		return null;
 	}
 
 	Bill createBill(int billNr, Date date, String author, String reciever,
-			List<BillPosition> positions) {
+			Set<BillPosition> positions) {
 		Bill b = new Bill(billNr, date, author, reciever, positions);
 		return b;
 	}

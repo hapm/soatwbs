@@ -1,7 +1,10 @@
 package fhbrs.soa.teamwork.fhbuchen;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class BillPosition {
@@ -11,6 +14,14 @@ public class BillPosition {
 	int quantity;
 	String description;
 	int posNum;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="bill", unique = false)
+	Bill bill;
+	
+	public BillPosition() {
+		
+	}
 
 	public BillPosition(double amount, int quantity, String description,
 			int posNum) {

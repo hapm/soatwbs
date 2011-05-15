@@ -4,6 +4,9 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * Describes a Relation between a Bill and an Invoice.
@@ -18,11 +21,13 @@ public class Relation {
 	/**
 	 * Saves the bill instance.
 	 */
+	@OneToOne
 	private Bill bill;
 	
 	/**
 	 * Saves the invoice instance.
 	 */
+	@OneToOne
 	private Invoice invoice;
 	
 	/**
@@ -43,7 +48,12 @@ public class Relation {
 	/**
 	 * Saves the time, this relation was last changed.
 	 */
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date timestamp;
+	
+	public Relation() {
+		
+	}
 
 	/**
 	 * Initializes a new instance of the Relation class.
