@@ -9,24 +9,24 @@ import javax.jws.WebService;
 @WebService
 public class BillSystem {
 	@WebMethod
-	Bill searchBill(int billNr) {
+	public Bill searchBill(int billNr) {
 		return null;
 	}
 
 	@WebMethod
-	Set<Bill> listBills() {
+	public Set<Bill> listBills() {
 		return null;
 	}
 
 	@WebMethod
-	Bill createBill(int billNr, Date date, String author, String reciever,
+	public Bill createBill(int billNr, Date date, String author, String reciever,
 			Set<BillPosition> positions) {
 		Bill b = new Bill(billNr, date, author, reciever, positions);
 		return b;
 	}
 	
 	@WebMethod
-	void updateBill(Bill b){
+	public void updateBill(Bill b){
 		
 	}
 }

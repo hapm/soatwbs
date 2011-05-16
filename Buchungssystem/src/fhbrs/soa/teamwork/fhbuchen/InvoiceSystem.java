@@ -8,6 +8,10 @@ import javax.jws.WebService;
 
 @WebService
 public class InvoiceSystem {
+	public InvoiceSystem() {
+		
+	}
+	
 	@WebMethod
 	Invoice searchInvoice(int invoiceNr){
 		return null;

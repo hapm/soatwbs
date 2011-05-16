@@ -38,11 +38,11 @@ public class Bill {
 		this.positions = positions;
 	}
 
-	String getAuthor() {
+	public String getAuthor() {
 		return this.author;
 	}
 
-	Date getDate() {
+	public Date getDate() {
 		return this.date;
 	}
 
