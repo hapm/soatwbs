@@ -3,7 +3,7 @@ package fhbrs.soa.teamwork.fhbuchen;
 import java.util.Date;
 import java.util.Set;
 
-public class BillService {
+public class BillSystem {
 	Bill searchBill(int billNr) {
 		return null;
 	}

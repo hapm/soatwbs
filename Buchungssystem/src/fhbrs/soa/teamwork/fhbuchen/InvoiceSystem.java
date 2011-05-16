@@ -3,7 +3,7 @@ package fhbrs.soa.teamwork.fhbuchen;
 import java.util.Date;
 import java.util.Set;
 
-public class InvoiceService {
+public class InvoiceSystem {
 	Invoice searchInvoice(int invoiceNr){
 		return null;
 	}
