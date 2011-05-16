@@ -221,7 +221,7 @@ public class Relation {
 			for(Invoice i: invoices){
 				if(compBillInvoice(b, i)){
 					Relation rel = new Relation(b,i);
-					//ToDo Save the Relation in a DB
+					// TODO Save the Relation in a DB
 				}
 					
 			}
