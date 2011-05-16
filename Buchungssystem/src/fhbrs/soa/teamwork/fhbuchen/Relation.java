@@ -2,6 +2,7 @@ package fhbrs.soa.teamwork.fhbuchen;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -198,8 +199,8 @@ public class Relation {
 	}
 
 	boolean compBillInvoice(Bill bill, Invoice invoice) {
-		List<BillPosition> bp = bill.getPositions();
-		List<InvoicePosition> ip = invoice.getPositions();
+		Set<BillPosition> bp = bill.getPositions();
+		Set<InvoicePosition> ip = invoice.getPositions();
 		
 		if (bill.getPositions().size() == invoice.getPositions().size()) {
 			for (BillPosition bpos : bp) {

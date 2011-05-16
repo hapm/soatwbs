@@ -70,11 +70,11 @@ public class Bill {
 		this.billNr = billNr;
 	}
 
-	public List<BillPosition> getPositions() {
+	public Set<BillPosition> getPositions() {
 		return positions;
 	}
 
-	public void setPositions(List<BillPosition> positions) {
+	public void setPositions(Set<BillPosition> positions) {
 		this.positions = positions;
 	}
 }
