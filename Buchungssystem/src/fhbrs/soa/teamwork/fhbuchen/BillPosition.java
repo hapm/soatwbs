@@ -33,23 +33,23 @@ public class BillPosition {
 		this.articleNr = articleNr;
 	}
 
-	double getAmount() {
+	public double getAmount() {
 		return this.amount;
 	}
 
-	int getQuantity() {
+	public int getQuantity() {
 		return this.quantity;
 	}
 
-	String getDescription() {
+	public String getDescription() {
 		return this.description;
 	}
 
-	int getPosNum() {
+	public int getPosNum() {
 		return this.posNum;
 	}
 
-	void setPosNum(int num) {
+	public void setPosNum(int num) {
 		this.posNum = num;
 	}
 

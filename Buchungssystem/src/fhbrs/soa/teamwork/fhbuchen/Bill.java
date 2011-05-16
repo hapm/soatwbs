@@ -46,27 +46,30 @@ public class Bill {
 		return this.date;
 	}
 
-	int getBillNr() {
+	public int getBillNr() {
 		return this.billNr;
 	}
 
-	double getTotalAmount() {
+	public double getTotalAmount() {
 		double amount = 0;
+		
+		if (this.positions == null)
+			return amount;
 		for (BillPosition position : this.positions) {
 			amount += position.amount;
 		}
 		return amount;
 	}
 
-	void setAuthor(String author) {
+	public void setAuthor(String author) {
 		this.author = author;
 	}
 
-	void setDate(Date date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 
-	void setBillNr(int billNr) {
+	public void setBillNr(int billNr) {
 		this.billNr = billNr;
 	}
 
