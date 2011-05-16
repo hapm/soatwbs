@@ -24,9 +24,9 @@ public class Bill {
 
 	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER, mappedBy= "bill")
 	Set<BillPosition> positions;
-	
+
 	public Bill() {
-		
+
 	}
 
 	public Bill(int billNr, Date date, String author, String reciever,
@@ -68,5 +68,13 @@ public class Bill {
 
 	void setBillNr(int billNr) {
 		this.billNr = billNr;
+	}
+
+	public List<BillPosition> getPositions() {
+		return positions;
+	}
+
+	public void setPositions(List<BillPosition> positions) {
+		this.positions = positions;
 	}
 }

@@ -12,7 +12,7 @@ public class InvoicePosition {
 	int quantity;
 	String description;
 	int posNum;
-	
+	int articleNr;
 	@ManyToOne
 	Invoice invoice;
 
@@ -21,11 +21,12 @@ public class InvoicePosition {
 	}
 	
 	public InvoicePosition(double weight, int quanitity, String description,
-			int posNum) {
+			int posNum, int articleNr) {
 		this.weight = weight;
 		this.quantity = quanitity;
 		this.description = description;
 		this.posNum = posNum;
+		this.articleNr = articleNr;
 	}
 
 	public double getWeight() {
@@ -58,5 +59,13 @@ public class InvoicePosition {
 
 	public void setPosNum(int posNum) {
 		this.posNum = posNum;
+	}
+	
+	public int getArticleNr() {
+		return articleNr;
+	}
+
+	public void setArticleNr(int articleNr) {
+		this.articleNr = articleNr;
 	}
 }
