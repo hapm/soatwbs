@@ -1,7 +1,6 @@
 package fhbrs.soa.teamwork.fhbuchen;
 
 import java.util.Date;
-import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -217,7 +216,7 @@ public class Relation {
 		else return false;
 	}
 	
-	void autoCompare(List<Bill> bills, List<Invoice> invoices){
+	void autoCompare(Set<Bill> bills, Set<Invoice> invoices){
 		for(Bill b: bills){
 			for(Invoice i: invoices){
 				if(compBillInvoice(b, i)){
