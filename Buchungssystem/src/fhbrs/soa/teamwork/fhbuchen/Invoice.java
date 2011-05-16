@@ -29,8 +29,13 @@ public class Invoice {
 		
 	}
 
-	public Invoice(int billNr, Date date, String author, String reciever,
+	public Invoice(int invoiceNr, Date date, String author, String reciever,
 			Set<InvoicePosition> positions) {
+		this.invoiceNr = invoiceNr;
+		this.date = date;
+		this.author = author;
+		this.reciever = reciever;
+		this.positions = positions;
 	}
 
 	public int getInvoiceNr() {
