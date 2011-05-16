@@ -3,7 +3,9 @@ package fhbrs.soa.teamwork.fhbuchen;
 import java.util.Date;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
@@ -20,7 +22,7 @@ public class Invoice {
 	@Temporal(TemporalType.DATE)
 	Date date;
 	
-	@OneToMany
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER, mappedBy= "invoice")
 	Set<InvoicePosition> positions;
 	
 	public Invoice() {
