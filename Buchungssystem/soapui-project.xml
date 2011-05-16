@@ -1,2 +1,341 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project name="Buchungssystem" soapui-version="3.6.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="ProjectSettings@projectNature">com.eviware.soapui.soapuiNature</con:setting></con:settings><con:properties/><con:wssContainer/></con:soapui-project>
+<con:soapui-project name="InvoiceTest" resourceRoot="" soapui-version="3.6.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="InvoiceSystemServiceSoap12Binding" type="wsdl" bindingName="{http://fhbuchen.teamwork.soa.fhbrs}InvoiceSystemServiceSoap12Binding" soapVersion="1_2" anonymous="optional" definition="http://localhost:8080/Buchungssystem/services/InvoiceSystemService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8080/Buchungssystem/services/InvoiceSystemService.InvoiceSystemServiceHttpSoap12Endpoint/</con:endpoint></con:endpoints><con:operation isOneWay="false" action="urn:createInvoice" name="createInvoice" bindingOperationName="createInvoice" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Buchungssystem/services/InvoiceSystemService.InvoiceSystemServiceHttpSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fhb="http://fhbuchen.teamwork.soa.fhbrs" xmlns:xsd="http://util.java/xsd">
+   <soap:Header/>
+   <soap:Body>
+      <fhb:createInvoice>
+         <!--Optional:-->
+         <fhb:billNr>?</fhb:billNr>
+         <!--Optional:-->
+         <fhb:date>?</fhb:date>
+         <!--Optional:-->
+         <fhb:author>?</fhb:author>
+         <!--Optional:-->
+         <fhb:reciever>?</fhb:reciever>
+         <!--Optional:-->
+         <fhb:positions>
+            <!--Optional:-->
+            <xsd:empty>?</xsd:empty>
+         </fhb:positions>
+      </fhb:createInvoice>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:createInvoice"/></con:call></con:operation><con:operation isOneWay="false" action="urn:listInvoices" name="listInvoices" bindingOperationName="listInvoices" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Buchungssystem/services/InvoiceSystemService.InvoiceSystemServiceHttpSoap12Endpoint/</con:endpoint><con:request>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+   &lt;soap:Header/>
+   &lt;soap:Body/>
+&lt;/soap:Envelope></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:listInvoices"/></con:call></con:operation><con:operation isOneWay="false" action="urn:searchInvoice" name="searchInvoice" bindingOperationName="searchInvoice" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Buchungssystem/services/InvoiceSystemService.InvoiceSystemServiceHttpSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fhb="http://fhbuchen.teamwork.soa.fhbrs">
+   <soap:Header/>
+   <soap:Body>
+      <fhb:searchInvoice>
+         <!--Optional:-->
+         <fhb:invoiceNr>?</fhb:invoiceNr>
+      </fhb:searchInvoice>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:searchInvoice"/></con:call></con:operation><con:operation isOneWay="false" action="urn:updateInvoice" name="updateInvoice" bindingOperationName="updateInvoice" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Buchungssystem/services/InvoiceSystemService.InvoiceSystemServiceHttpSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fhb="http://fhbuchen.teamwork.soa.fhbrs" xmlns:xsd="http://fhbuchen.teamwork.soa.fhbrs/xsd" xmlns:xsd1="http://util.java/xsd">
+   <soap:Header/>
+   <soap:Body>
+      <fhb:updateInvoice>
+         <!--Optional:-->
+         <fhb:i>
+            <!--Optional:-->
+            <xsd:author>?</xsd:author>
+            <!--Optional:-->
+            <xsd:date>?</xsd:date>
+            <!--Optional:-->
+            <xsd:invoiceNr>?</xsd:invoiceNr>
+            <!--Optional:-->
+            <xsd:positions>
+               <!--Optional:-->
+               <xsd1:empty>?</xsd1:empty>
+            </xsd:positions>
+            <!--Optional:-->
+            <xsd:reciever>?</xsd:reciever>
+         </fhb:i>
+      </fhb:updateInvoice>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:updateInvoice"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="InvoiceSystemServiceSoap11Binding" type="wsdl" bindingName="{http://fhbuchen.teamwork.soa.fhbrs}InvoiceSystemServiceSoap11Binding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/Buchungssystem/services/InvoiceSystemService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/Buchungssystem/services/InvoiceSystemService?wsdl"><con:part><con:url>http://localhost:8080/Buchungssystem/services/InvoiceSystemService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://fhbuchen.teamwork.soa.fhbrs" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://fhbuchen.teamwork.soa.fhbrs" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ax21="http://fhbuchen.teamwork.soa.fhbrs/xsd" xmlns:ax22="http://util.java/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:documentation>Please Type your service description here</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://util.java/xsd">
+      <xs:complexType name="Set">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="empty" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://fhbuchen.teamwork.soa.fhbrs/xsd" xmlns:ax23="http://util.java/xsd">
+      <xs:import namespace="http://util.java/xsd"/>
+      <xs:complexType name="Invoice">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="author" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="date" nillable="true" type="xs:date"/>
+          <xs:element minOccurs="0" name="invoiceNr" type="xs:int"/>
+          <xs:element minOccurs="0" name="positions" nillable="true" type="ax22:Set"/>
+          <xs:element minOccurs="0" name="reciever" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://fhbuchen.teamwork.soa.fhbrs" xmlns:ax25="http://util.java/xsd" xmlns:ax24="http://fhbuchen.teamwork.soa.fhbrs/xsd">
+      <xs:import namespace="http://fhbuchen.teamwork.soa.fhbrs/xsd"/>
+      <xs:import namespace="http://util.java/xsd"/>
+      <xs:element name="updateInvoice">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="i" nillable="true" type="ax21:Invoice"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="searchInvoice">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="invoiceNr" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="searchInvoiceResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax21:Invoice"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="listInvoicesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax22:Set"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="createInvoice">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="billNr" type="xs:int"/>
+            <xs:element minOccurs="0" name="date" nillable="true" type="xs:date"/>
+            <xs:element minOccurs="0" name="author" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="reciever" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="positions" nillable="true" type="ax22:Set"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="createInvoiceResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax21:Invoice"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="listInvoicesRequest"/>
+  <wsdl:message name="listInvoicesResponse">
+    <wsdl:part name="parameters" element="ns:listInvoicesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="searchInvoiceRequest">
+    <wsdl:part name="parameters" element="ns:searchInvoice"/>
+  </wsdl:message>
+  <wsdl:message name="searchInvoiceResponse">
+    <wsdl:part name="parameters" element="ns:searchInvoiceResponse"/>
+  </wsdl:message>
+  <wsdl:message name="updateInvoiceRequest">
+    <wsdl:part name="parameters" element="ns:updateInvoice"/>
+  </wsdl:message>
+  <wsdl:message name="createInvoiceRequest">
+    <wsdl:part name="parameters" element="ns:createInvoice"/>
+  </wsdl:message>
+  <wsdl:message name="createInvoiceResponse">
+    <wsdl:part name="parameters" element="ns:createInvoiceResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="InvoiceSystemServicePortType">
+    <wsdl:operation name="listInvoices">
+      <wsdl:input message="ns:listInvoicesRequest" wsaw:Action="urn:listInvoices"/>
+      <wsdl:output message="ns:listInvoicesResponse" wsaw:Action="urn:listInvoicesResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="searchInvoice">
+      <wsdl:input message="ns:searchInvoiceRequest" wsaw:Action="urn:searchInvoice"/>
+      <wsdl:output message="ns:searchInvoiceResponse" wsaw:Action="urn:searchInvoiceResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateInvoice">
+      <wsdl:input message="ns:updateInvoiceRequest" wsaw:Action="urn:updateInvoice"/>
+    </wsdl:operation>
+    <wsdl:operation name="createInvoice">
+      <wsdl:input message="ns:createInvoiceRequest" wsaw:Action="urn:createInvoice"/>
+      <wsdl:output message="ns:createInvoiceResponse" wsaw:Action="urn:createInvoiceResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="InvoiceSystemServiceSoap11Binding" type="ns:InvoiceSystemServicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="listInvoices">
+      <soap:operation soapAction="urn:listInvoices" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchInvoice">
+      <soap:operation soapAction="urn:searchInvoice" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateInvoice">
+      <soap:operation soapAction="urn:updateInvoice" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="createInvoice">
+      <soap:operation soapAction="urn:createInvoice" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="InvoiceSystemServiceSoap12Binding" type="ns:InvoiceSystemServicePortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="listInvoices">
+      <soap12:operation soapAction="urn:listInvoices" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchInvoice">
+      <soap12:operation soapAction="urn:searchInvoice" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateInvoice">
+      <soap12:operation soapAction="urn:updateInvoice" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="createInvoice">
+      <soap12:operation soapAction="urn:createInvoice" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="InvoiceSystemServiceHttpBinding" type="ns:InvoiceSystemServicePortType">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="listInvoices">
+      <http:operation location="InvoiceSystemService/listInvoices"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="listInvoices"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="listInvoices"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchInvoice">
+      <http:operation location="InvoiceSystemService/searchInvoice"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="searchInvoice"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="searchInvoice"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateInvoice">
+      <http:operation location="InvoiceSystemService/updateInvoice"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="updateInvoice"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="createInvoice">
+      <http:operation location="InvoiceSystemService/createInvoice"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="createInvoice"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="createInvoice"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InvoiceSystemService">
+    <wsdl:port name="InvoiceSystemServiceHttpSoap11Endpoint" binding="ns:InvoiceSystemServiceSoap11Binding">
+      <soap:address location="http://localhost:8080/Buchungssystem/services/InvoiceSystemService.InvoiceSystemServiceHttpSoap11Endpoint/"/>
+    </wsdl:port>
+    <wsdl:port name="InvoiceSystemServiceHttpSoap12Endpoint" binding="ns:InvoiceSystemServiceSoap12Binding">
+      <soap12:address location="http://localhost:8080/Buchungssystem/services/InvoiceSystemService.InvoiceSystemServiceHttpSoap12Endpoint/"/>
+    </wsdl:port>
+    <wsdl:port name="InvoiceSystemServiceHttpEndpoint" binding="ns:InvoiceSystemServiceHttpBinding">
+      <http:address location="http://localhost:8080/Buchungssystem/services/InvoiceSystemService.InvoiceSystemServiceHttpEndpoint/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/Buchungssystem/services/InvoiceSystemService.InvoiceSystemServiceHttpSoap11Endpoint/</con:endpoint></con:endpoints><con:operation isOneWay="false" action="urn:createInvoice" name="createInvoice" bindingOperationName="createInvoice" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Buchungssystem/services/InvoiceSystemService.InvoiceSystemServiceHttpSoap11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:fhb="http://fhbuchen.teamwork.soa.fhbrs" xmlns:xsd="http://util.java/xsd">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <fhb:createInvoice>
+         <!--Optional:-->
+         <fhb:billNr>123</fhb:billNr>
+         <!--Optional:-->
+         <fhb:date>2011-12-01T18:15:00.0Z</fhb:date>
+         <!--Optional:-->
+         <fhb:author>David Goering</fhb:author>
+         <!--Optional:-->
+         <fhb:reciever>Markus Andree</fhb:reciever>
+         <!--Optional:-->
+         <fhb:positions xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <!--Optional:-->
+<!--            <fhb:invoicePosition>
+	    	<fhb:articleNr>5</fhb:articleNr>
+		<fhb:positionId>2</fhb:positionId>
+		<fhb:weight>255</fhb:weight>
+		<fhb:quantity>1</fhb:quantity>
+		<fhb:description>Dildo</fhb:description>
+		<fhb:posNum>2</fhb:posNum>
+	    </fhb:invoicePosition> -->
+         </fhb:positions>
+      </fhb:createInvoice>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:createInvoice"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="urn:listInvoices" name="listInvoices" bindingOperationName="listInvoices" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Buchungssystem/services/InvoiceSystemService.InvoiceSystemServiceHttpSoap11Endpoint/</con:endpoint><con:request>&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   &lt;soapenv:Header/>
+   &lt;soapenv:Body/>
+&lt;/soapenv:Envelope></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:listInvoices"/></con:call></con:operation><con:operation isOneWay="false" action="urn:searchInvoice" name="searchInvoice" bindingOperationName="searchInvoice" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Buchungssystem/services/InvoiceSystemService.InvoiceSystemServiceHttpSoap11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:fhb="http://fhbuchen.teamwork.soa.fhbrs">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <fhb:searchInvoice>
+         <!--Optional:-->
+         <fhb:invoiceNr>?</fhb:invoiceNr>
+      </fhb:searchInvoice>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:searchInvoice"/></con:call></con:operation><con:operation isOneWay="false" action="urn:updateInvoice" name="updateInvoice" bindingOperationName="updateInvoice" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Buchungssystem/services/InvoiceSystemService.InvoiceSystemServiceHttpSoap11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:fhb="http://fhbuchen.teamwork.soa.fhbrs" xmlns:xsd="http://fhbuchen.teamwork.soa.fhbrs/xsd" xmlns:xsd1="http://util.java/xsd">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <fhb:updateInvoice>
+         <!--Optional:-->
+         <fhb:i>
+            <!--Optional:-->
+            <xsd:author>?</xsd:author>
+            <!--Optional:-->
+            <xsd:date>?</xsd:date>
+            <!--Optional:-->
+            <xsd:invoiceNr>?</xsd:invoiceNr>
+            <!--Optional:-->
+            <xsd:positions>
+               <!--Optional:-->
+               <xsd1:empty>?</xsd1:empty>
+            </xsd:positions>
+            <!--Optional:-->
+            <xsd:reciever>?</xsd:reciever>
+         </fhb:i>
+      </fhb:updateInvoice>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:updateInvoice"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/></con:soapui-project>
