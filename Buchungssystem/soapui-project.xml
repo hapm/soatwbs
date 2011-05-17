@@ -1030,4 +1030,31 @@ declare namespace xsi='http://www.w3.org/2001/XMLSchema-instance'
          </fhb:b>
       </fhb:updateBill>
    </soap:Body>
-</soap:Envelope>]]></con:request><con:wsaConfig action="urn:updateBill"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/></con:soapui-project>
+</soap:Envelope>]]></con:request><con:wsaConfig action="urn:updateBill"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite name="InvoiceSystemService"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="createInvoiceTest" searchProperties="true"><con:settings/><con:testStep type="request" name="createInvoice - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>InvoiceSystemServiceSoap11Binding</con:interface><con:operation>createInvoice</con:operation><con:request name="createInvoice - Request 1" outgoingWss="" incomingWss="" timeout="" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Buchungssystem/services/InvoiceSystemService.InvoiceSystemServiceHttpSoap11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:fhb="http://fhbuchen.teamwork.soa.fhbrs" xmlns:xsd="http://util.java/xsd">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <fhb:createInvoice>
+         <!--Optional:-->
+         <fhb:billNr>123</fhb:billNr>
+         <!--Optional:-->
+         <fhb:date>2011-12-01T18:15:00.0Z</fhb:date>
+         <!--Optional:-->
+         <fhb:author>David Goering</fhb:author>
+         <!--Optional:-->
+         <fhb:reciever>Markus Andree</fhb:reciever>
+         <!--Optional:-->
+         <fhb:positions xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <!--Optional:-->
+<!--            <fhb:invoicePosition>
+	    	<fhb:articleNr>5</fhb:articleNr>
+		<fhb:positionId>2</fhb:positionId>
+		<fhb:weight>255</fhb:weight>
+		<fhb:quantity>1</fhb:quantity>
+		<fhb:description>Dildo</fhb:description>
+		<fhb:posNum>2</fhb:posNum>
+	    </fhb:invoicePosition>
+ -->
+         </fhb:positions>
+      </fhb:createInvoice>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="Schema Compliance" name="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>David Goering</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:createInvoice"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/></con:soapui-project>
