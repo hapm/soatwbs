@@ -15,8 +15,10 @@ public class BillSystem {
 	}
 
 	@WebMethod
-	public Set<Bill> listBills() {
-		return null;
+	public Bill[] listBills() {
+		Bill test = new Bill(123, new Date(), "Test", "test2", null );
+		Bill[] test2 = new Bill[] { test, new Bill(321, new Date(), "Alles", "Klar", null ) };
+		return test2;
 	}
 
 	@WebMethod
