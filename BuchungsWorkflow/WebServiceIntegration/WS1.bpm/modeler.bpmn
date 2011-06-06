@@ -34,30 +34,6 @@
     </vertices>
   </pools>
   <pools xmi:type="bpmn:Pool" xmi:id="_uy2GEY05EeCEyKhnz1Mjkg" iD="_uy2GEI05EeCEyKhnz1Mjkg" name="WS1_Process">
-    <artifacts xmi:type="bpmn:DataObject" xmi:id="_zQvfYZBHEeCl6sqzFsrsmA" iD="_zQvfYJBHEeCl6sqzFsrsmA">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zQvfYpBHEeCl6sqzFsrsmA" source="attachedDataobject">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zQvfY5BHEeCl6sqzFsrsmA" key="isBpelDeclaration" value="true"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zRBMMZBHEeCl6sqzFsrsmA" key="defaultDeclarationName" value="nsListInvoicesMsg"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zRGEsJBHEeCl6sqzFsrsmA" key="douri2" value="builtin:///diagram?wsdlmessage={http://fhbuchen.teamwork.soa.fhbrs}listInvoicesRequest"/>
-      </eAnnotations>
-      <associations xmi:type="bpmn:Association" xmi:id="_zRCaUJBHEeCl6sqzFsrsmA" direction="To">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zREPgJBHEeCl6sqzFsrsmA" source="dataObjectAssociationTypeSource">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zRE2kJBHEeCl6sqzFsrsmA" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
-        </eAnnotations>
-      </associations>
-    </artifacts>
-    <artifacts xmi:type="bpmn:DataObject" xmi:id="_05vdgZBHEeCl6sqzFsrsmA" iD="_05vdgJBHEeCl6sqzFsrsmA">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_05vdgpBHEeCl6sqzFsrsmA" source="attachedDataobject">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_05vdg5BHEeCl6sqzFsrsmA" key="isBpelDeclaration" value="true"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_050WAZBHEeCl6sqzFsrsmA" key="defaultDeclarationName" value="nsListInvoicesResponseMsg"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0551kZBHEeCl6sqzFsrsmA" key="douri2" value="builtin:///diagram?wsdlmessage={http://fhbuchen.teamwork.soa.fhbrs}listInvoicesResponse"/>
-      </eAnnotations>
-      <associations xmi:type="bpmn:Association" xmi:id="_052LMJBHEeCl6sqzFsrsmA" direction="From">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_054AYJBHEeCl6sqzFsrsmA" source="dataObjectAssociationTypeSource">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0551kJBHEeCl6sqzFsrsmA" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
-        </eAnnotations>
-      </associations>
-    </artifacts>
     <artifacts xmi:type="bpmn:DataObject" xmi:id="_DF1v0ZBIEeCl6sqzFsrsmA" iD="_DF1v0JBIEeCl6sqzFsrsmA">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DF1v0pBIEeCl6sqzFsrsmA" source="attachedDataobject">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DF1v05BIEeCl6sqzFsrsmA" key="isBpelDeclaration" value="true"/>
@@ -82,9 +58,33 @@
         </eAnnotations>
       </associations>
     </artifacts>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_mGUFcZBHEeCl6sqzFsrsmA" iD="_mGUFcJBHEeCl6sqzFsrsmA" associations="_zRCaUJBHEeCl6sqzFsrsmA _052LMJBHEeCl6sqzFsrsmA" outgoingEdges="_Bvg2EZBIEeCl6sqzFsrsmA" incomingEdges="_A-u5YZBIEeCl6sqzFsrsmA" name="get Invoice list" activityType="Task">
-      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_zOp0sZBHEeCl6sqzFsrsmA"/>
-      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_04-ogZBHEeCl6sqzFsrsmA"/>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_HEIQsZBQEeCZKMGX95a_FA" iD="_HEIQsJBQEeCZKMGX95a_FA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HEIQspBQEeCZKMGX95a_FA" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HEIQs5BQEeCZKMGX95a_FA" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HEOXUJBQEeCZKMGX95a_FA" key="defaultDeclarationName" value="nsCreateInvoiceRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HEVsEZBQEeCZKMGX95a_FA" key="douri2" value="builtin:///diagram?wsdlmessage={http://fhbuchen.teamwork.soa.fhbrs}createInvoiceRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_HEQzkJBQEeCZKMGX95a_FA" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HETP0JBQEeCZKMGX95a_FA" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HEVsEJBQEeCZKMGX95a_FA" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_Ho38gZBQEeCZKMGX95a_FA" iD="_Ho38gJBQEeCZKMGX95a_FA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ho38gpBQEeCZKMGX95a_FA" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ho38g5BQEeCZKMGX95a_FA" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ho_RQZBQEeCZKMGX95a_FA" key="defaultDeclarationName" value="nsCreateInvoiceResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HpJpUJBQEeCZKMGX95a_FA" key="douri2" value="builtin:///diagram?wsdlmessage={http://fhbuchen.teamwork.soa.fhbrs}createInvoiceResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_HpCUkJBQEeCZKMGX95a_FA" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HpF-8JBQEeCZKMGX95a_FA" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HpJCQJBQEeCZKMGX95a_FA" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_mGUFcZBHEeCl6sqzFsrsmA" iD="_mGUFcJBHEeCl6sqzFsrsmA" associations="_HEQzkJBQEeCZKMGX95a_FA _HpCUkJBQEeCZKMGX95a_FA" outgoingEdges="_Bvg2EZBIEeCl6sqzFsrsmA" incomingEdges="_A-u5YZBIEeCl6sqzFsrsmA" name="get Invoice list" activityType="Task">
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_HDvPIZBQEeCZKMGX95a_FA"/>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_HoI8sJBQEeCZKMGX95a_FA"/>
     </vertices>
     <vertices xmi:type="bpmn:Activity" xmi:id="_6JjKQZBHEeCl6sqzFsrsmA" iD="_6JjKQJBHEeCl6sqzFsrsmA" associations="_DF-SsJBIEeCl6sqzFsrsmA" outgoingEdges="_A-u5YZBIEeCl6sqzFsrsmA" name="List Invoices" activityType="EventStartMessage">
       <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_DFl4MZBIEeCl6sqzFsrsmA"/>
@@ -95,57 +95,60 @@
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_A-u5YZBIEeCl6sqzFsrsmA" iD="_A-u5YJBIEeCl6sqzFsrsmA"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_Bvg2EZBIEeCl6sqzFsrsmA" iD="_Bvg2EJBIEeCl6sqzFsrsmA"/>
   </pools>
-  <pools xmi:type="bpmn:Pool" xmi:id="_TuTzYZBHEeCl6sqzFsrsmA" iD="_TuTzYJBHEeCl6sqzFsrsmA" name="Pool0"/>
   <pools xmi:type="bpmn:Pool" xmi:id="_T1Qv8ZBHEeCl6sqzFsrsmA" iD="_T1Qv8JBHEeCl6sqzFsrsmA" name="Webservices">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_b9kT0JBHEeCl6sqzFsrsmA" source="executablepool">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_b9k64JBHEeCl6sqzFsrsmA" key="poolIsExecutable" value="false"/>
     </eAnnotations>
-    <artifacts xmi:type="bpmn:DataObject" xmi:id="_zRYYkZBHEeCl6sqzFsrsmA" iD="_zRYYkJBHEeCl6sqzFsrsmA">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zRYYkpBHEeCl6sqzFsrsmA" source="attachedDataobject">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zRYYk5BHEeCl6sqzFsrsmA" key="isBpelDeclaration" value="true"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zRcqAZBHEeCl6sqzFsrsmA" key="defaultDeclarationName" value="nsListInvoicesMsg"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zRgUYJBHEeCl6sqzFsrsmA" key="douri2" value="builtin:///diagram?wsdlmessage={http://fhbuchen.teamwork.soa.fhbrs}listInvoicesRequest"/>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_HEXhQZBQEeCZKMGX95a_FA" iD="_HEXhQJBQEeCZKMGX95a_FA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HEXhQpBQEeCZKMGX95a_FA" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HEXhQ5BQEeCZKMGX95a_FA" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HEZ9gpBQEeCZKMGX95a_FA" key="defaultDeclarationName" value="nsCreateInvoiceRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HEdA0JBQEeCZKMGX95a_FA" key="douri2" value="builtin:///diagram?wsdlmessage={http://fhbuchen.teamwork.soa.fhbrs}createInvoiceRequest"/>
       </eAnnotations>
-      <associations xmi:type="bpmn:Association" xmi:id="_zRd4IJBHEeCl6sqzFsrsmA" direction="From">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zRefMJBHEeCl6sqzFsrsmA" source="dataObjectAssociationTypeSource">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zRftUJBHEeCl6sqzFsrsmA" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+      <associations xmi:type="bpmn:Association" xmi:id="_HEbLoJBQEeCZKMGX95a_FA" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HEbysJBQEeCZKMGX95a_FA" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HEcZwJBQEeCZKMGX95a_FA" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
         </eAnnotations>
       </associations>
     </artifacts>
-    <artifacts xmi:type="bpmn:DataObject" xmi:id="_05ipMZBHEeCl6sqzFsrsmA" iD="_05ipMJBHEeCl6sqzFsrsmA">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_05ipMpBHEeCl6sqzFsrsmA" source="attachedDataobject">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_05ipM5BHEeCl6sqzFsrsmA" key="isBpelDeclaration" value="true"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_05nhspBHEeCl6sqzFsrsmA" key="defaultDeclarationName" value="nsListInvoicesResponseMsg"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_05toUZBHEeCl6sqzFsrsmA" key="douri2" value="builtin:///diagram?wsdlmessage={http://fhbuchen.teamwork.soa.fhbrs}listInvoicesResponse"/>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_HorvQZBQEeCZKMGX95a_FA" iD="_HorvQJBQEeCZKMGX95a_FA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HorvQpBQEeCZKMGX95a_FA" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HorvQ5BQEeCZKMGX95a_FA" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HownwpBQEeCZKMGX95a_FA" key="defaultDeclarationName" value="nsCreateInvoiceResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ho2HUZBQEeCZKMGX95a_FA" key="douri2" value="builtin:///diagram?wsdlmessage={http://fhbuchen.teamwork.soa.fhbrs}createInvoiceResponse"/>
       </eAnnotations>
-      <associations xmi:type="bpmn:Association" xmi:id="_05p98JBHEeCl6sqzFsrsmA" direction="To">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_05rzIJBHEeCl6sqzFsrsmA" source="dataObjectAssociationTypeSource">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_05toUJBHEeCl6sqzFsrsmA" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+      <associations xmi:type="bpmn:Association" xmi:id="_Hoyc8JBQEeCZKMGX95a_FA" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ho0SIJBQEeCZKMGX95a_FA" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ho2HUJBQEeCZKMGX95a_FA" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
         </eAnnotations>
       </associations>
     </artifacts>
-    <vertices xmi:type="bpmn:Activity" xmi:id="_vnpRx5BHEeCl6sqzFsrsmA" iD="_vnXk8JBHEeCl6sqzFsrsmA" associations="_zRd4IJBHEeCl6sqzFsrsmA _05p98JBHEeCl6sqzFsrsmA" name="listInvoices" activityType="Task">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_vnpRyJBHEeCl6sqzFsrsmA" source="attachedDataobject">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_vnpRyZBHEeCl6sqzFsrsmA" key="douri" value="project:///Services/InvoiceSystemService.wsdl?wsdloperationwithbinding={http://fhbuchen.teamwork.soa.fhbrs}InvoiceSystemServiceHttpBinding/listInvoices"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_FLVjFJBQEeCZKMGX95a_FA" iD="_FLMZIJBQEeCZKMGX95a_FA" associations="_HEbLoJBQEeCZKMGX95a_FA _Hoyc8JBQEeCZKMGX95a_FA" name="createInvoice" activityType="Task">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FLVjFZBQEeCZKMGX95a_FA" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FLVjFpBQEeCZKMGX95a_FA" key="douri" value="project:///Services/InvoiceSystemService.wsdl?wsdloperationbound={http://fhbuchen.teamwork.soa.fhbrs}InvoiceSystemService/InvoiceSystemServiceHttpEndpoint/createInvoice"/>
       </eAnnotations>
-      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_zOp0sZBHEeCl6sqzFsrsmA"/>
-      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_04-ogZBHEeCl6sqzFsrsmA"/>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_HDvPIZBQEeCZKMGX95a_FA"/>
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_HoI8sJBQEeCZKMGX95a_FA"/>
     </vertices>
   </pools>
-  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_zOp0sZBHEeCl6sqzFsrsmA" iD="_zOp0sJBHEeCl6sqzFsrsmA" source="_mGUFcZBHEeCl6sqzFsrsmA" target="_vnpRx5BHEeCl6sqzFsrsmA">
-    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zQXE4JBHEeCl6sqzFsrsmA" source="attachedDataobject">
-      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zQXE4ZBHEeCl6sqzFsrsmA" key="douri" value="project:///Services/InvoiceSystemService.wsdl?messageForOperationWithBinding={http://fhbuchen.teamwork.soa.fhbrs}InvoiceSystemServiceHttpBinding/listInvoices/input/listInvoicesRequest"/>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_DFl4MZBIEeCl6sqzFsrsmA" iD="_DFl4MJBIEeCl6sqzFsrsmA" source="_At_WoY0yEeCEyKhnz1Mjkg" target="_6JjKQZBHEeCl6sqzFsrsmA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tlm50JBNEeCZKMGX95a_FA" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tlm50ZBNEeCZKMGX95a_FA" key="douri" value="project:///Services/InvoiceSystemService.wsdl?xsdelement={http://fhbuchen.teamwork.soa.fhbrs}createInvoice"/>
     </eAnnotations>
   </messages>
-  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_04-ogZBHEeCl6sqzFsrsmA" iD="_04-ogJBHEeCl6sqzFsrsmA" source="_vnpRx5BHEeCl6sqzFsrsmA" target="_mGUFcZBHEeCl6sqzFsrsmA">
-    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_05NSAJBHEeCl6sqzFsrsmA" source="attachedDataobject">
-      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_05NSAZBHEeCl6sqzFsrsmA" key="douri" value="project:///Services/InvoiceSystemService.wsdl?messageForOperationWithBinding={http://fhbuchen.teamwork.soa.fhbrs}InvoiceSystemServiceHttpBinding/listInvoices/output/listInvoicesResponse"/>
-    </eAnnotations>
-  </messages>
-  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_DFl4MZBIEeCl6sqzFsrsmA" iD="_DFl4MJBIEeCl6sqzFsrsmA" source="_At_WoY0yEeCEyKhnz1Mjkg" target="_6JjKQZBHEeCl6sqzFsrsmA"/>
   <messages xmi:type="bpmn:MessagingEdge" xmi:id="_E5TRgZBIEeCl6sqzFsrsmA" iD="_E5TRgJBIEeCl6sqzFsrsmA" source="_9HapkZBHEeCl6sqzFsrsmA" target="_At_WoY0yEeCEyKhnz1Mjkg">
-    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jrt10JBIEeCl6sqzFsrsmA" source="attachedDataobject">
-      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jrt10ZBIEeCl6sqzFsrsmA" key="douri" value="project:///Services/InvoiceSystemService.wsdl?xsdelement={http://fhbuchen.teamwork.soa.fhbrs}listInvoicesResponse"/>
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_u5CQkJBNEeCZKMGX95a_FA" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_u5CQkZBNEeCZKMGX95a_FA" key="douri" value="project:///Services/InvoiceSystemService.wsdl?xsdelement={http://fhbuchen.teamwork.soa.fhbrs}createInvoiceResponse"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_HDvPIZBQEeCZKMGX95a_FA" iD="_HDvPIJBQEeCZKMGX95a_FA" source="_mGUFcZBHEeCl6sqzFsrsmA" target="_FLVjFJBQEeCZKMGX95a_FA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HD180JBQEeCZKMGX95a_FA" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HD180ZBQEeCZKMGX95a_FA" key="douri" value="project:///Services/InvoiceSystemService.wsdl?messageForBoundOperation={http://fhbuchen.teamwork.soa.fhbrs}InvoiceSystemService/InvoiceSystemServiceHttpEndpoint/createInvoice/input/createInvoiceRequest"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_HoI8sJBQEeCZKMGX95a_FA" iD="_HoIVoJBQEeCZKMGX95a_FA" source="_FLVjFJBQEeCZKMGX95a_FA" target="_mGUFcZBHEeCl6sqzFsrsmA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HoUi4JBQEeCZKMGX95a_FA" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HoUi4ZBQEeCZKMGX95a_FA" key="douri" value="project:///Services/InvoiceSystemService.wsdl?messageForBoundOperation={http://fhbuchen.teamwork.soa.fhbrs}InvoiceSystemService/InvoiceSystemServiceHttpEndpoint/createInvoice/output/createInvoiceResponse"/>
     </eAnnotations>
   </messages>
 </bpmn:BpmnDiagram>
