@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:BpmnDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:bpmn="http://stp.eclipse.org/bpmn" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmi:id="_AnvksY0yEeCEyKhnz1Mjkg" iD="_AnvksI0yEeCEyKhnz1Mjkg">
+  <pools xmi:type="bpmn:Pool" xmi:id="_AsWX4Y0yEeCEyKhnz1Mjkg" iD="_AsWX4I0yEeCEyKhnz1Mjkg" name="Console">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_dZNLYJBHEeCl6sqzFsrsmA" source="executablepool">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_dZNLYZBHEeCl6sqzFsrsmA" key="poolIsExecutable" value="false"/>
+    </eAnnotations>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_DFr-0ZBIEeCl6sqzFsrsmA" iD="_DFr-0JBIEeCl6sqzFsrsmA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DFr-0pBIEeCl6sqzFsrsmA" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DFr-05BIEeCl6sqzFsrsmA" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DFwQQJBIEeCl6sqzFsrsmA" key="defaultDeclarationName" value="wS1_ProcessList_InvoicesRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DFzTkZBIEeCl6sqzFsrsmA" key="douri2" value="builtin:///diagram?wsdlmessage={http://thisdiagram/WS1_Process}List_InvoicesRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_DFw3UJBIEeCl6sqzFsrsmA" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DFyFcJBIEeCl6sqzFsrsmA" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DFzTkJBIEeCl6sqzFsrsmA" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_E5018ZBIEeCl6sqzFsrsmA" iD="_E5018JBIEeCl6sqzFsrsmA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_E5018pBIEeCl6sqzFsrsmA" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_E50185BIEeCl6sqzFsrsmA" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_E535QpBIEeCl6sqzFsrsmA" key="defaultDeclarationName" value="wS1_ProcessList_InvoicesResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_E57joJBIEeCl6sqzFsrsmA" key="douri2" value="builtin:///diagram?wsdlmessage={http://thisdiagram/WS1_Process}List_InvoicesResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_E55HYJBIEeCl6sqzFsrsmA" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_E56VgJBIEeCl6sqzFsrsmA" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_E568kJBIEeCl6sqzFsrsmA" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_At_WoY0yEeCEyKhnz1Mjkg" iD="_At_WoI0yEeCEyKhnz1Mjkg" associations="_DFw3UJBIEeCl6sqzFsrsmA _E55HYJBIEeCl6sqzFsrsmA" name="Task" activityType="Task">
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_DFl4MZBIEeCl6sqzFsrsmA"/>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_E5TRgZBIEeCl6sqzFsrsmA"/>
+    </vertices>
+  </pools>
+  <pools xmi:type="bpmn:Pool" xmi:id="_uy2GEY05EeCEyKhnz1Mjkg" iD="_uy2GEI05EeCEyKhnz1Mjkg" name="WS1_Process">
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_zQvfYZBHEeCl6sqzFsrsmA" iD="_zQvfYJBHEeCl6sqzFsrsmA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zQvfYpBHEeCl6sqzFsrsmA" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zQvfY5BHEeCl6sqzFsrsmA" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zRBMMZBHEeCl6sqzFsrsmA" key="defaultDeclarationName" value="nsListInvoicesMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zRGEsJBHEeCl6sqzFsrsmA" key="douri2" value="builtin:///diagram?wsdlmessage={http://fhbuchen.teamwork.soa.fhbrs}listInvoicesRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_zRCaUJBHEeCl6sqzFsrsmA" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zREPgJBHEeCl6sqzFsrsmA" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zRE2kJBHEeCl6sqzFsrsmA" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_05vdgZBHEeCl6sqzFsrsmA" iD="_05vdgJBHEeCl6sqzFsrsmA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_05vdgpBHEeCl6sqzFsrsmA" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_05vdg5BHEeCl6sqzFsrsmA" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_050WAZBHEeCl6sqzFsrsmA" key="defaultDeclarationName" value="nsListInvoicesResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0551kZBHEeCl6sqzFsrsmA" key="douri2" value="builtin:///diagram?wsdlmessage={http://fhbuchen.teamwork.soa.fhbrs}listInvoicesResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_052LMJBHEeCl6sqzFsrsmA" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_054AYJBHEeCl6sqzFsrsmA" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0551kJBHEeCl6sqzFsrsmA" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_DF1v0ZBIEeCl6sqzFsrsmA" iD="_DF1v0JBIEeCl6sqzFsrsmA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DF1v0pBIEeCl6sqzFsrsmA" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DF1v05BIEeCl6sqzFsrsmA" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DF8dgZBIEeCl6sqzFsrsmA" key="defaultDeclarationName" value="thisList_InvoicesRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DGCkIJBIEeCl6sqzFsrsmA" key="douri2" value="builtin:///diagram?wsdlmessage={http://thisdiagram/WS1_Process}List_InvoicesRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_DF-SsJBIEeCl6sqzFsrsmA" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DGAH4JBIEeCl6sqzFsrsmA" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DGB9EJBIEeCl6sqzFsrsmA" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_E5eQoZBIEeCl6sqzFsrsmA" iD="_E5eQoJBIEeCl6sqzFsrsmA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_E5e3sJBIEeCl6sqzFsrsmA" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_E5e3sZBIEeCl6sqzFsrsmA" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_E5oBoZBIEeCl6sqzFsrsmA" key="defaultDeclarationName" value="thisList_InvoicesResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_E5zAwJBIEeCl6sqzFsrsmA" key="douri2" value="builtin:///diagram?wsdlmessage={http://thisdiagram/WS1_Process}List_InvoicesResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_E5rsAJBIEeCl6sqzFsrsmA" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_E5vWYJBIEeCl6sqzFsrsmA" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_E5yZsJBIEeCl6sqzFsrsmA" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_mGUFcZBHEeCl6sqzFsrsmA" iD="_mGUFcJBHEeCl6sqzFsrsmA" associations="_zRCaUJBHEeCl6sqzFsrsmA _052LMJBHEeCl6sqzFsrsmA" outgoingEdges="_Bvg2EZBIEeCl6sqzFsrsmA" incomingEdges="_A-u5YZBIEeCl6sqzFsrsmA" name="get Invoice list" activityType="Task">
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_zOp0sZBHEeCl6sqzFsrsmA"/>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_04-ogZBHEeCl6sqzFsrsmA"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_6JjKQZBHEeCl6sqzFsrsmA" iD="_6JjKQJBHEeCl6sqzFsrsmA" associations="_DF-SsJBIEeCl6sqzFsrsmA" outgoingEdges="_A-u5YZBIEeCl6sqzFsrsmA" name="List Invoices" activityType="EventStartMessage">
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_DFl4MZBIEeCl6sqzFsrsmA"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_9HapkZBHEeCl6sqzFsrsmA" iD="_9HapkJBHEeCl6sqzFsrsmA" associations="_E5rsAJBIEeCl6sqzFsrsmA" incomingEdges="_Bvg2EZBIEeCl6sqzFsrsmA" name="Send Results" activityType="EventEndMessage">
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_E5TRgZBIEeCl6sqzFsrsmA"/>
+    </vertices>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_A-u5YZBIEeCl6sqzFsrsmA" iD="_A-u5YJBIEeCl6sqzFsrsmA"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_Bvg2EZBIEeCl6sqzFsrsmA" iD="_Bvg2EJBIEeCl6sqzFsrsmA"/>
+  </pools>
+  <pools xmi:type="bpmn:Pool" xmi:id="_TuTzYZBHEeCl6sqzFsrsmA" iD="_TuTzYJBHEeCl6sqzFsrsmA" name="Pool0"/>
+  <pools xmi:type="bpmn:Pool" xmi:id="_T1Qv8ZBHEeCl6sqzFsrsmA" iD="_T1Qv8JBHEeCl6sqzFsrsmA" name="Webservices">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_b9kT0JBHEeCl6sqzFsrsmA" source="executablepool">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_b9k64JBHEeCl6sqzFsrsmA" key="poolIsExecutable" value="false"/>
+    </eAnnotations>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_zRYYkZBHEeCl6sqzFsrsmA" iD="_zRYYkJBHEeCl6sqzFsrsmA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zRYYkpBHEeCl6sqzFsrsmA" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zRYYk5BHEeCl6sqzFsrsmA" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zRcqAZBHEeCl6sqzFsrsmA" key="defaultDeclarationName" value="nsListInvoicesMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zRgUYJBHEeCl6sqzFsrsmA" key="douri2" value="builtin:///diagram?wsdlmessage={http://fhbuchen.teamwork.soa.fhbrs}listInvoicesRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_zRd4IJBHEeCl6sqzFsrsmA" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zRefMJBHEeCl6sqzFsrsmA" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zRftUJBHEeCl6sqzFsrsmA" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_05ipMZBHEeCl6sqzFsrsmA" iD="_05ipMJBHEeCl6sqzFsrsmA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_05ipMpBHEeCl6sqzFsrsmA" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_05ipM5BHEeCl6sqzFsrsmA" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_05nhspBHEeCl6sqzFsrsmA" key="defaultDeclarationName" value="nsListInvoicesResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_05toUZBHEeCl6sqzFsrsmA" key="douri2" value="builtin:///diagram?wsdlmessage={http://fhbuchen.teamwork.soa.fhbrs}listInvoicesResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_05p98JBHEeCl6sqzFsrsmA" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_05rzIJBHEeCl6sqzFsrsmA" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_05toUJBHEeCl6sqzFsrsmA" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_vnpRx5BHEeCl6sqzFsrsmA" iD="_vnXk8JBHEeCl6sqzFsrsmA" associations="_zRd4IJBHEeCl6sqzFsrsmA _05p98JBHEeCl6sqzFsrsmA" name="listInvoices" activityType="Task">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_vnpRyJBHEeCl6sqzFsrsmA" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_vnpRyZBHEeCl6sqzFsrsmA" key="douri" value="project:///Services/InvoiceSystemService.wsdl?wsdloperationwithbinding={http://fhbuchen.teamwork.soa.fhbrs}InvoiceSystemServiceHttpBinding/listInvoices"/>
+      </eAnnotations>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_zOp0sZBHEeCl6sqzFsrsmA"/>
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_04-ogZBHEeCl6sqzFsrsmA"/>
+    </vertices>
+  </pools>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_zOp0sZBHEeCl6sqzFsrsmA" iD="_zOp0sJBHEeCl6sqzFsrsmA" source="_mGUFcZBHEeCl6sqzFsrsmA" target="_vnpRx5BHEeCl6sqzFsrsmA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zQXE4JBHEeCl6sqzFsrsmA" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zQXE4ZBHEeCl6sqzFsrsmA" key="douri" value="project:///Services/InvoiceSystemService.wsdl?messageForOperationWithBinding={http://fhbuchen.teamwork.soa.fhbrs}InvoiceSystemServiceHttpBinding/listInvoices/input/listInvoicesRequest"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_04-ogZBHEeCl6sqzFsrsmA" iD="_04-ogJBHEeCl6sqzFsrsmA" source="_vnpRx5BHEeCl6sqzFsrsmA" target="_mGUFcZBHEeCl6sqzFsrsmA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_05NSAJBHEeCl6sqzFsrsmA" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_05NSAZBHEeCl6sqzFsrsmA" key="douri" value="project:///Services/InvoiceSystemService.wsdl?messageForOperationWithBinding={http://fhbuchen.teamwork.soa.fhbrs}InvoiceSystemServiceHttpBinding/listInvoices/output/listInvoicesResponse"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_DFl4MZBIEeCl6sqzFsrsmA" iD="_DFl4MJBIEeCl6sqzFsrsmA" source="_At_WoY0yEeCEyKhnz1Mjkg" target="_6JjKQZBHEeCl6sqzFsrsmA"/>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_E5TRgZBIEeCl6sqzFsrsmA" iD="_E5TRgJBIEeCl6sqzFsrsmA" source="_9HapkZBHEeCl6sqzFsrsmA" target="_At_WoY0yEeCEyKhnz1Mjkg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jrt10JBIEeCl6sqzFsrsmA" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jrt10ZBIEeCl6sqzFsrsmA" key="douri" value="project:///Services/InvoiceSystemService.wsdl?xsdelement={http://fhbuchen.teamwork.soa.fhbrs}listInvoicesResponse"/>
+    </eAnnotations>
+  </messages>
+</bpmn:BpmnDiagram>
