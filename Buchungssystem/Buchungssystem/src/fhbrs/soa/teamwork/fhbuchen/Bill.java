@@ -5,7 +5,10 @@ import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -13,8 +16,13 @@ import javax.persistence.TemporalType;
 import java.util.Set;
 
 @Entity
+@NamedQuery(
+	    name="listAllBills",
+	    query="SELECT b FROM Bill b"
+	)
 public class Bill {
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	int billId;
 	int billNr;
 	
@@ -22,20 +30,33 @@ public class Bill {
 	Date date;
 	String author, reciever;
 
-	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER, mappedBy= "bill")
-	Set<BillPosition> positions;
+	BillPosition[] positions;
 
 	public Bill() {
 
 	}
 
 	public Bill(int billNr, Date date, String author, String reciever,
-			Set<BillPosition> positions) {
+			BillPosition[] positions) {
 		this.billNr = billNr;
 		this.date = date;
 		this.author = author;
 		this.reciever = reciever;
 		this.positions = positions;
+	}
+
+	/**
+	 * @return the billId
+	 */
+	public int getBillId() {
+		return billId;
+	}
+
+	/**
+	 * @param billId the billId to set
+	 */
+	public void setBillId(int billId) {
+		this.billId = billId;
 	}
 
 	public String getAuthor() {
@@ -73,11 +94,11 @@ public class Bill {
 		this.billNr = billNr;
 	}
 
-	public Set<BillPosition> getPositions() {
+	public BillPosition[] getPositions() {
 		return positions;
 	}
 
-	public void setPositions(Set<BillPosition> positions) {
+	public void setPositions(BillPosition[] positions) {
 		this.positions = positions;
 	}
 }

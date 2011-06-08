@@ -1,6 +1,8 @@
 package fhbrs.soa.teamwork.fhbuchen;
 
+import java.util.Arrays;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -16,6 +18,10 @@ import javax.persistence.TemporalType;
  */
 @Entity
 public class Relation {
+	public final static int STATUS_UNCHECKED = 0;
+	public final static int STATUS_CHECKED = 1;
+	public final static int STATUS_DOUBLECHECKED = 2;
+	
 	@Id
 	int relationId;
 
@@ -34,7 +40,7 @@ public class Relation {
 	/**
 	 * Saves the status of the relation.
 	 */
-	private RelationStatus status;
+	private int status;
 
 	/**
 	 * Saves the creator of the relation.
@@ -68,7 +74,7 @@ public class Relation {
 		this.bill = bill;
 		this.invoice = invoice;
 		this.timestamp = new Date();
-		this.status = RelationStatus.Unchecked;
+		this.status = STATUS_UNCHECKED;
 	}
 
 	/**
@@ -83,7 +89,7 @@ public class Relation {
 		this.bill = bill;
 		this.invoice = invoice;
 		this.timestamp = new Date();
-		this.status = RelationStatus.Checked;
+		this.status = STATUS_CHECKED;
 		this.creator = user;
 	}
 
@@ -95,7 +101,7 @@ public class Relation {
 	 */
 	public void setBill(Bill bill) {
 		this.bill = bill;
-		this.status = RelationStatus.Checked;
+		this.status = STATUS_CHECKED;
 		this.timestamp = new Date();
 	}
 
@@ -116,7 +122,7 @@ public class Relation {
 	 */
 	public void setInvoice(Invoice invoice) {
 		this.invoice = invoice;
-		this.status = RelationStatus.Checked;
+		this.status = STATUS_CHECKED;
 		this.timestamp = new Date();
 	}
 
@@ -134,7 +140,7 @@ public class Relation {
 	 * 
 	 * @return The relation status.
 	 */
-	public RelationStatus getStatus() {
+	public int getStatus() {
 		return status;
 	}
 
@@ -176,16 +182,16 @@ public class Relation {
 	 */
 	void check(String user) {
 		switch (this.status) {
-		case Unchecked:
+		case STATUS_UNCHECKED:
 			this.creator = user;
 			this.timestamp = new Date();
-			this.status = RelationStatus.Checked;
+			this.status = STATUS_CHECKED;
 			break;
 
-		case Checked:
+		case STATUS_CHECKED:
 			this.doubleChecker = user;
 			this.timestamp = new Date();
-			this.status = RelationStatus.DoubleChecked;
+			this.status = STATUS_DOUBLECHECKED;
 			break;
 		}
 	}
@@ -198,10 +204,10 @@ public class Relation {
 	}
 
 	boolean compBillInvoice(Bill bill, Invoice invoice) {
-		Set<BillPosition> bp = bill.getPositions();
-		Set<InvoicePosition> ip = invoice.getPositions();
+		Set<BillPosition> bp = new HashSet<BillPosition>(Arrays.asList(bill.getPositions()));
+		Set<InvoicePosition> ip = new HashSet<InvoicePosition>(Arrays.asList(invoice.getPositions()));
 		
-		if (bill.getPositions().size() == invoice.getPositions().size()) {
+		if (bill.getPositions().length == invoice.getPositions().length) {
 			for (BillPosition bpos : bp) {
 				for(InvoicePosition ipos: ip){
 					if(comparePositions(bpos, ipos)){

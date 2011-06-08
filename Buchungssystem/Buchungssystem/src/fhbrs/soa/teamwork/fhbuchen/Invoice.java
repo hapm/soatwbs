@@ -22,15 +22,14 @@ public class Invoice {
 	@Temporal(TemporalType.DATE)
 	Date date;
 	
-	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER, mappedBy= "invoice")
-	Set<InvoicePosition> positions;
+	InvoicePosition[] positions;
 	
 	public Invoice() {
 		
 	}
 
 	public Invoice(int invoiceNr, Date date, String author, String reciever,
-			Set<InvoicePosition> positions) {
+			InvoicePosition[] positions) {
 		this.invoiceNr = invoiceNr;
 		this.date = date;
 		this.author = author;
@@ -70,11 +69,11 @@ public class Invoice {
 		this.date = date;
 	}
 
-	public Set<InvoicePosition> getPositions() {
+	public InvoicePosition[] getPositions() {
 		return positions;
 	}
 
-	public void setPositions(Set<InvoicePosition> positions) {
+	public void setPositions(InvoicePosition[] positions) {
 		this.positions = positions;
 	}
 }

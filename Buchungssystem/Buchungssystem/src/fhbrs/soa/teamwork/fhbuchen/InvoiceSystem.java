@@ -18,7 +18,7 @@ public class InvoiceSystem {
 	}
 	
 	@WebMethod
-	public Set<Invoice> listInvoices(){
+	public Invoice[] listInvoices(){
 		return null;
 	}
 	
@@ -29,7 +29,7 @@ public class InvoiceSystem {
 	
 	@WebMethod
 	public Invoice createInvoice(int billNr, Date date, String author, String reciever,
-			Set<InvoicePosition> positions){
+			InvoicePosition[] positions){
 		Invoice i = new Invoice(billNr, date,author,reciever,positions);
 		return i;
 	}
