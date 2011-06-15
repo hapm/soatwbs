@@ -1,0 +1,65 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:DataObjects="http://fhbuchen.teamwork.soa.fhbrs/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns="http://fhbuchen.teamwork.soa.fhbrs" xmlns:diag="http://thisdiagram" xmlns:ax23="http://util.java/xsd" xmlns:Cleint="http://thisdiagram/Cleint" xmlns:this="http://thisdiagram/WF" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/WF">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://fhbuchen.teamwork.soa.fhbrs/xsd" bpdm:prefix="DataObjects" bpdm:comment="contrib=&apos;project:///Services/DataObjects.xsd"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://fhbuchen.teamwork.soa.fhbrs" bpdm:prefix="ns" bpdm:comment="contrib=&apos;project:///Services/BillSystemService.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_Xzx6AJaUEeCQHLAOs6tIWQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://util.java/xsd" bpdm:prefix="ax23" bpdm:comment="contrib=&apos;project:///Services/BillSystemService.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Cleint" bpdm:prefix="Cleint" bpdm:comment="contrib=&apos;partner-pool:///_Xzx6AJaUEeCQHLAOs6tIWQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/WF" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types">
+            <wsdl:portType name="ForCleint">
+                <wsdl:operation name="EventStartMessage" bpdm:source="partner-pool:///_Xzx6AJaUEeCQHLAOs6tIWQ">
+                    <wsdl:input message="this:EventStartMessageRequest" name="EventStartMessage"/>
+                    <wsdl:output message="this:EventStartMessageResponse" name="EventStartMessageResponse"/>
+                </wsdl:operation>
+            </wsdl:portType>
+            <xs:element name="EventStartMessageRequest" type="xs:string" bpdm:source="partner-pool:///_Xzx6AJaUEeCQHLAOs6tIWQ"/>
+            <wsdl:message name="EventStartMessageRequest" bpdm:source="partner-pool:///_Xzx6AJaUEeCQHLAOs6tIWQ">
+                <wsdl:part name="body" element="this:EventStartMessageRequest"/>
+            </wsdl:message>
+            <xs:element name="EventStartMessageResponse" type="xs:string" bpdm:source="partner-pool:///_Xzx6AJaUEeCQHLAOs6tIWQ"/>
+            <wsdl:message name="EventStartMessageResponse" bpdm:source="partner-pool:///_Xzx6AJaUEeCQHLAOs6tIWQ">
+                <wsdl:part name="body" element="this:EventStartMessageResponse"/>
+            </wsdl:message>
+            <bpel:binding name="CanonicBindingForCleint" type="this:ForCleint" bpdm:isSynchronized="true"/>
+        </bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_Xzx6AJaUEeCQHLAOs6tIWQ" bpdm:label="Cleint"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/DataObjects.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/BillSystemService.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_XgcuUJaUEeCQHLAOs6tIWQ" bpdm:label="WebService"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="WF" bpdm:ID="_V-NfgJaUEeCQHLAOs6tIWQ">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="webServiceAndWFForPortBillSystemServiceHttpEndpointPlkVar" partnerLinkType="diag:WebServiceAndWFForPortBillSystemServiceHttpEndpointPlk" initializePartnerRole="yes" partnerRole="WebService_for_WF" bpdm:invokedService="ns:BillSystemService" bpdm:invokedPort="BillSystemServiceHttpSoap11Endpoint" bpdm:invokedSOAPAddress="http://192.168.19.182:8080/axis2/services/BillSystemService.BillSystemServiceHttpSoap11Endpoint/" bpdm:invokedIsDefault="true" bpdm:clientTasks="_V-NfgJaUEeCQHLAOs6tIWQ:_V-OGkJaUEeCQHLAOs6tIWQ" bpdm:isManaged="true" bpdm:otherPoolId="_XgcuUJaUEeCQHLAOs6tIWQ"/>
+            <bpel:partnerLink name="cleintAndWFPlkVar" partnerLinkType="diag:CleintAndWF" myRole="WF_for_Cleint" bpdm:enableSharing="false" bpdm:providedService="this:CanonicServiceForCleint" bpdm:providedPort="canonicPort" bpdm:provideSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/WF/Cleint" bpdm:providedIsDefault="true" bpdm:clientTasks="_V-NfgJaUEeCQHLAOs6tIWQ:_hCJHAJaUEeCQHLAOs6tIWQ, _V-NfgJaUEeCQHLAOs6tIWQ:_fT7RsJaUEeCQHLAOs6tIWQ" bpdm:isManaged="true" bpdm:otherPoolId="_Xzx6AJaUEeCQHLAOs6tIWQ"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="thisEventStartMessageResponse" messageType="this:EventStartMessageResponse" bpdm:id="_hm72IJaUEeCQHLAOs6tIWQ" bpdm:messageIds=" out:_hm3ksJaUEeCQHLAOs6tIWQ">
+                <bpel:from bpdm:toPart="body">
+                    <bpel:literal bpdm:linkedMessageType="this:EventStartMessageResponse" bpdm:linkedPart="body"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="thisEventStartMessageRequest" messageType="this:EventStartMessageRequest" bpdm:id="_TdOekJaWEeCQHLAOs6tIWQ" bpdm:messageIds="inc:_fVAPwJaUEeCQHLAOs6tIWQ out:_TcllYJaWEeCQHLAOs6tIWQ">
+                <bpel:from bpdm:toPart="body">
+                    <bpel:literal bpdm:linkedMessageType="this:EventStartMessageRequest" bpdm:linkedPart="body"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="nsCreateBillResponseMsg" messageType="ns:createBillResponse" binding="ns:BillSystemServiceHttpBinding" operation="createBill" opMsgType="1" bpdm:id="_T8HaAJaWEeCQHLAOs6tIWQ" bpdm:messageIds="inc:_T6tEwJaWEeCQHLAOs6tIWQ"/>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask eventType="start: message" operation="EventStartMessage" partnerLink="cleintAndWFPlkVar" portType="this:ForCleint" isMyRole="true" enableSharing="false" bpdm:label="Message_Start_Event" bpdm:ID="_fT7RsJaUEeCQHLAOs6tIWQ">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="thisEventStartMessageRequest" bpdm:variableIsManaged="true" bpdm:messageType="this:EventStartMessageRequest" bpdm:ID="_fVAPwJaUEeCQHLAOs6tIWQ"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask operation="createBill" partnerLink="webServiceAndWFForPortBillSystemServiceHttpEndpointPlkVar" portType="ns:BillSystemServicePortType" isMyRole="false" enableSharing="false" bpdm:label="add bill to service" bpdm:ID="_V-OGkJaUEeCQHLAOs6tIWQ">
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="thisEventStartMessageRequest" bpdm:msgVarScopeId="_V-NfgJaUEeCQHLAOs6tIWQ" bpdm:variableIsManaged="true" bpdm:messageType="ns:createBillRequest" bpdm:binding="ns:BillSystemServiceHttpBinding" bpdm:ID="_TcllYJaWEeCQHLAOs6tIWQ"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="nsCreateBillResponseMsg" bpdm:msgVarScopeId="_V-NfgJaUEeCQHLAOs6tIWQ" bpdm:variableIsManaged="true" bpdm:messageType="ns:createBillResponse" bpdm:binding="ns:BillSystemServiceHttpBinding" bpdm:ID="_T6tEwJaWEeCQHLAOs6tIWQ"></bpdm:linkset>
+            </bpdm:messagingtask>
+            <bpdm:messagingtask eventType="end: message" operation="EventStartMessage" partnerLink="cleintAndWFPlkVar" portType="this:ForCleint" isMyRole="true" enableSharing="false" bpdm:label="Message_End_Event" bpdm:ID="_hCJHAJaUEeCQHLAOs6tIWQ">
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="thisEventStartMessageResponse" bpdm:msgVarScopeId="_V-NfgJaUEeCQHLAOs6tIWQ" bpdm:variableIsManaged="true" bpdm:messageType="this:EventStartMessageResponse" bpdm:ID="_hm3ksJaUEeCQHLAOs6tIWQ"></bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>

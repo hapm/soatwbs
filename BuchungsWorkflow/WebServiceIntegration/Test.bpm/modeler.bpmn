@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:BpmnDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:bpmn="http://stp.eclipse.org/bpmn" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmi:id="_V-M4cZaUEeCQHLAOs6tIWQ" iD="_V-M4cJaUEeCQHLAOs6tIWQ">
+  <pools xmi:type="bpmn:Pool" xmi:id="_V-NfgZaUEeCQHLAOs6tIWQ" iD="_V-NfgJaUEeCQHLAOs6tIWQ" name="WF">
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_hm72IZaUEeCQHLAOs6tIWQ" iD="_hm72IJaUEeCQHLAOs6tIWQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hm72IpaUEeCQHLAOs6tIWQ" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hm72I5aUEeCQHLAOs6tIWQ" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hm_ggZaUEeCQHLAOs6tIWQ" key="defaultDeclarationName" value="thisEventStartMessageResponse"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hnDK4ZaUEeCQHLAOs6tIWQ" key="douri2" value="builtin:///diagram?wsdlmessage={http://thisdiagram/WF}EventStartMessageResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_hnAuoJaUEeCQHLAOs6tIWQ" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hnB8wJaUEeCQHLAOs6tIWQ" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hnDK4JaUEeCQHLAOs6tIWQ" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_TdOekZaWEeCQHLAOs6tIWQ" iD="_TdOekJaWEeCQHLAOs6tIWQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TdOekpaWEeCQHLAOs6tIWQ" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TdOek5aWEeCQHLAOs6tIWQ" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Tdar0ZaWEeCQHLAOs6tIWQ" key="defaultDeclarationName" value="nsCreateBillRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TdqjcJaWEeCQHLAOs6tIWQ" key="douri2" value="builtin:///diagram?wsdlmessage={http://fhbuchen.teamwork.soa.fhbrs}createBillRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_TdiAkJaWEeCQHLAOs6tIWQ" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Tdlq8JaWEeCQHLAOs6tIWQ" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Tdp8YJaWEeCQHLAOs6tIWQ" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_T8HaAZaWEeCQHLAOs6tIWQ" iD="_T8HaAJaWEeCQHLAOs6tIWQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_T8HaApaWEeCQHLAOs6tIWQ" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_T8HaA5aWEeCQHLAOs6tIWQ" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_T8a8AZaWEeCQHLAOs6tIWQ" key="defaultDeclarationName" value="nsCreateBillResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_T8rasJaWEeCQHLAOs6tIWQ" key="douri2" value="builtin:///diagram?wsdlmessage={http://fhbuchen.teamwork.soa.fhbrs}createBillResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_T8f0gJaWEeCQHLAOs6tIWQ" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_T8l7IJaWEeCQHLAOs6tIWQ" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_T8qzoJaWEeCQHLAOs6tIWQ" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_V-OGkZaUEeCQHLAOs6tIWQ" iD="_V-OGkJaUEeCQHLAOs6tIWQ" associations="_TdiAkJaWEeCQHLAOs6tIWQ _T8f0gJaWEeCQHLAOs6tIWQ" outgoingEdges="_hCP0sZaUEeCQHLAOs6tIWQ" incomingEdges="_fvZFsZaUEeCQHLAOs6tIWQ" name="add bill to service" activityType="Task">
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_TcllYZaWEeCQHLAOs6tIWQ"/>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_T6tEwZaWEeCQHLAOs6tIWQ"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_fT7RsZaUEeCQHLAOs6tIWQ" iD="_fT7RsJaUEeCQHLAOs6tIWQ" outgoingEdges="_fvZFsZaUEeCQHLAOs6tIWQ" activityType="EventStartMessage">
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_fVAPwZaUEeCQHLAOs6tIWQ"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_hCJHAZaUEeCQHLAOs6tIWQ" iD="_hCJHAJaUEeCQHLAOs6tIWQ" associations="_hnAuoJaUEeCQHLAOs6tIWQ" incomingEdges="_hCP0sZaUEeCQHLAOs6tIWQ" activityType="EventEndMessage">
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_hm3ksZaUEeCQHLAOs6tIWQ"/>
+    </vertices>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_fvZFsZaUEeCQHLAOs6tIWQ" iD="_fvZFsJaUEeCQHLAOs6tIWQ"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_hCP0sZaUEeCQHLAOs6tIWQ" iD="_hCP0sJaUEeCQHLAOs6tIWQ"/>
+  </pools>
+  <pools xmi:type="bpmn:Pool" xmi:id="_XgcuUZaUEeCQHLAOs6tIWQ" iD="_XgcuUJaUEeCQHLAOs6tIWQ" name="WebService">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iO_UoJaUEeCQHLAOs6tIWQ" source="executablepool">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iO_UoZaUEeCQHLAOs6tIWQ" key="poolIsExecutable" value="false"/>
+    </eAnnotations>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_TduN0ZaWEeCQHLAOs6tIWQ" iD="_TduN0JaWEeCQHLAOs6tIWQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TduN0paWEeCQHLAOs6tIWQ" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TduN05aWEeCQHLAOs6tIWQ" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TdztYJaWEeCQHLAOs6tIWQ" key="defaultDeclarationName" value="nsCreateBillRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Td7CIJaWEeCQHLAOs6tIWQ" key="douri2" value="builtin:///diagram?wsdlmessage={http://fhbuchen.teamwork.soa.fhbrs}createBillRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_Td1ikJaWEeCQHLAOs6tIWQ" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Td3XwJaWEeCQHLAOs6tIWQ" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Td6bEJaWEeCQHLAOs6tIWQ" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_T7sjQZaWEeCQHLAOs6tIWQ" iD="_T7sjQJaWEeCQHLAOs6tIWQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_T7sjQpaWEeCQHLAOs6tIWQ" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_T7sjQ5aWEeCQHLAOs6tIWQ" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_T70fEpaWEeCQHLAOs6tIWQ" key="defaultDeclarationName" value="nsCreateBillResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_T8ChgJaWEeCQHLAOs6tIWQ" key="douri2" value="builtin:///diagram?wsdlmessage={http://fhbuchen.teamwork.soa.fhbrs}createBillResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_T74wgJaWEeCQHLAOs6tIWQ" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_T7-QEJaWEeCQHLAOs6tIWQ" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_T8BTYJaWEeCQHLAOs6tIWQ" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_a1F5cJaVEeCQHLAOs6tIWQ" iD="_a0utEJaVEeCQHLAOs6tIWQ" associations="_Td1ikJaWEeCQHLAOs6tIWQ _T74wgJaWEeCQHLAOs6tIWQ" name="createBill" activityType="Task">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_a1F5cZaVEeCQHLAOs6tIWQ" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_a1F5cpaVEeCQHLAOs6tIWQ" key="douri" value="project:///Services/BillSystemService.wsdl?wsdloperationbound={http://fhbuchen.teamwork.soa.fhbrs}BillSystemService/BillSystemServiceHttpEndpoint/createBill"/>
+      </eAnnotations>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_TcllYZaWEeCQHLAOs6tIWQ"/>
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_T6tEwZaWEeCQHLAOs6tIWQ"/>
+    </vertices>
+  </pools>
+  <pools xmi:type="bpmn:Pool" xmi:id="_Xzx6AZaUEeCQHLAOs6tIWQ" iD="_Xzx6AJaUEeCQHLAOs6tIWQ" name="Cleint">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_b9loAJaUEeCQHLAOs6tIWQ" source="executablepool">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_b9loAZaUEeCQHLAOs6tIWQ" key="poolIsExecutable" value="false"/>
+    </eAnnotations>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_fVGWYZaUEeCQHLAOs6tIWQ" iD="_fVGWYJaUEeCQHLAOs6tIWQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fVGWYpaUEeCQHLAOs6tIWQ" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fVGWY5aUEeCQHLAOs6tIWQ" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fVL18JaUEeCQHLAOs6tIWQ" key="defaultDeclarationName" value="wFEventStartMessageRequest"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fVPgUZaUEeCQHLAOs6tIWQ" key="douri2" value="builtin:///diagram?wsdlmessage={http://thisdiagram/WF}EventStartMessageRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_fVMdAJaUEeCQHLAOs6tIWQ" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fVOSMJaUEeCQHLAOs6tIWQ" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fVPgUJaUEeCQHLAOs6tIWQ" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_hnFnIZaUEeCQHLAOs6tIWQ" iD="_hnFnIJaUEeCQHLAOs6tIWQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hnFnIpaUEeCQHLAOs6tIWQ" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hnFnI5aUEeCQHLAOs6tIWQ" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hnIDYpaUEeCQHLAOs6tIWQ" key="defaultDeclarationName" value="wFEventStartMessageResponse"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hnLtwJaUEeCQHLAOs6tIWQ" key="douri2" value="builtin:///diagram?wsdlmessage={http://thisdiagram/WF}EventStartMessageResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_hnJRgJaUEeCQHLAOs6tIWQ" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hnJ4kJaUEeCQHLAOs6tIWQ" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hnLGsJaUEeCQHLAOs6tIWQ" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_ceJXYJaUEeCQHLAOs6tIWQ" iD="_ceIwUJaUEeCQHLAOs6tIWQ" associations="_fVMdAJaUEeCQHLAOs6tIWQ _hnJRgJaUEeCQHLAOs6tIWQ" name="add new bill" activityType="Task">
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_fVAPwZaUEeCQHLAOs6tIWQ"/>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_hm3ksZaUEeCQHLAOs6tIWQ"/>
+    </vertices>
+  </pools>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_fVAPwZaUEeCQHLAOs6tIWQ" iD="_fVAPwJaUEeCQHLAOs6tIWQ" source="_ceJXYJaUEeCQHLAOs6tIWQ" target="_fT7RsZaUEeCQHLAOs6tIWQ"/>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_hm3ksZaUEeCQHLAOs6tIWQ" iD="_hm3ksJaUEeCQHLAOs6tIWQ" source="_hCJHAZaUEeCQHLAOs6tIWQ" target="_ceJXYJaUEeCQHLAOs6tIWQ"/>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_TcllYZaWEeCQHLAOs6tIWQ" iD="_TcllYJaWEeCQHLAOs6tIWQ" source="_V-OGkZaUEeCQHLAOs6tIWQ" target="_a1F5cJaVEeCQHLAOs6tIWQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TcsTEJaWEeCQHLAOs6tIWQ" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TcsTEZaWEeCQHLAOs6tIWQ" key="douri" value="project:///Services/BillSystemService.wsdl?messageForBoundOperation={http://fhbuchen.teamwork.soa.fhbrs}BillSystemService/BillSystemServiceHttpEndpoint/createBill/input/createBillRequest"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_T6tEwZaWEeCQHLAOs6tIWQ" iD="_T6tEwJaWEeCQHLAOs6tIWQ" source="_a1F5cJaVEeCQHLAOs6tIWQ" target="_V-OGkZaUEeCQHLAOs6tIWQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_T7Cb8JaWEeCQHLAOs6tIWQ" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_T7Cb8ZaWEeCQHLAOs6tIWQ" key="douri" value="project:///Services/BillSystemService.wsdl?messageForBoundOperation={http://fhbuchen.teamwork.soa.fhbrs}BillSystemService/BillSystemServiceHttpEndpoint/createBill/output/createBillResponse"/>
+    </eAnnotations>
+  </messages>
+</bpmn:BpmnDiagram>

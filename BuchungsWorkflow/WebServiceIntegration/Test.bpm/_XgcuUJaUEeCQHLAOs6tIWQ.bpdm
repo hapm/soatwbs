@@ -1,0 +1,36 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:DataObjects="http://fhbuchen.teamwork.soa.fhbrs/xsd" xmlns:this="http://thisdiagram/WebService" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns="http://fhbuchen.teamwork.soa.fhbrs" xmlns:diag="http://thisdiagram" xmlns:ax23="http://util.java/xsd" xmlns:WF="http://thisdiagram/WF" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/WebService">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://fhbuchen.teamwork.soa.fhbrs/xsd" bpdm:prefix="DataObjects" bpdm:comment="contrib=&apos;project:///Services/DataObjects.xsd"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/WebService" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://fhbuchen.teamwork.soa.fhbrs" bpdm:prefix="ns" bpdm:comment="contrib=&apos;project:///Services/BillSystemService.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_V-NfgJaUEeCQHLAOs6tIWQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://util.java/xsd" bpdm:prefix="ax23" bpdm:comment="contrib=&apos;project:///Services/BillSystemService.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/WF" bpdm:prefix="WF" bpdm:comment="contrib=&apos;partner-pool:///_V-NfgJaUEeCQHLAOs6tIWQ"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/BillSystemService.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/DataObjects.xsd"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_V-NfgJaUEeCQHLAOs6tIWQ" bpdm:label="WF"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="WebService" bpdm:ID="_XgcuUJaUEeCQHLAOs6tIWQ">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="webServiceAndWFForPortBillSystemServiceHttpEndpointPlkVar" partnerLinkType="diag:WebServiceAndWFForPortBillSystemServiceHttpEndpointPlk" myRole="WebService_for_WF" bpdm:enableSharing="false" bpdm:providedService="ns:BillSystemService" bpdm:providedPort="BillSystemServiceHttpSoap11Endpoint" bpdm:provideSOAPAddress="http://192.168.19.182:8080/axis2/services/BillSystemService.BillSystemServiceHttpSoap11Endpoint/" bpdm:providedIsDefault="true" bpdm:clientTasks="_XgcuUJaUEeCQHLAOs6tIWQ:_a0utEJaVEeCQHLAOs6tIWQ" bpdm:isManaged="true" bpdm:otherPoolId="_V-NfgJaUEeCQHLAOs6tIWQ"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="nsCreateBillRequestMsg" messageType="ns:createBillRequest" binding="ns:BillSystemServiceHttpBinding" operation="createBill" opMsgType="0" bpdm:id="_TduN0JaWEeCQHLAOs6tIWQ" bpdm:messageIds="inc:_TcllYJaWEeCQHLAOs6tIWQ"/>
+            <bpel:variable name="nsCreateBillResponseMsg" messageType="ns:createBillResponse" binding="ns:BillSystemServiceHttpBinding" operation="createBill" opMsgType="1" bpdm:id="_T7sjQJaWEeCQHLAOs6tIWQ" bpdm:messageIds=" out:_T6tEwJaWEeCQHLAOs6tIWQ">
+                <bpel:from bpdm:toPart="parameters">
+                    <bpel:literal bpdm:linkedMessageType="ns:createBillResponse" bpdm:linkedPart="parameters" bpdm:binding="ns:BillSystemServiceHttpBinding" bpdm:opMsgType="1" bpdm:operation="createBill"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask operation="createBill" partnerLink="webServiceAndWFForPortBillSystemServiceHttpEndpointPlkVar" portType="ns:BillSystemServicePortType" isMyRole="true" enableSharing="false" bpdm:label="createBill" bpdm:ID="_a0utEJaVEeCQHLAOs6tIWQ">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="nsCreateBillRequestMsg" bpdm:msgVarScopeId="_XgcuUJaUEeCQHLAOs6tIWQ" bpdm:variableIsManaged="true" bpdm:messageType="ns:createBillRequest" bpdm:binding="ns:BillSystemServiceHttpBinding" bpdm:ID="_TcllYJaWEeCQHLAOs6tIWQ"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="nsCreateBillResponseMsg" bpdm:msgVarScopeId="_XgcuUJaUEeCQHLAOs6tIWQ" bpdm:variableIsManaged="true" bpdm:messageType="ns:createBillResponse" bpdm:binding="ns:BillSystemServiceHttpBinding" bpdm:ID="_T6tEwJaWEeCQHLAOs6tIWQ"></bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>
