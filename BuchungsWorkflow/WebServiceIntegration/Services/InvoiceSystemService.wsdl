@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://fhbuchen.teamwork.soa.fhbrs" xmlns:ax27="http://fhbuchen.teamwork.soa.fhbrs/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://fhbuchen.teamwork.soa.fhbrs">
+    <wsdl:types>
+        <xs:schema xmlns:ax28="http://fhbuchen.teamwork.soa.fhbrs/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://fhbuchen.teamwork.soa.fhbrs">
+            <xs:import namespace="http://fhbuchen.teamwork.soa.fhbrs/xsd" schemaLocation="DataObjects.xsd" />
+            <xs:element name="updateInvoice">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="i" nillable="true" type="ax28:Invoice"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="searchInvoice">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="invoiceNr" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="searchInvoiceResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax28:Invoice"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="listInvoicesResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax28:Invoice"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="createInvoice">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="invoiceNr" type="xs:int"/>
+                        <xs:element minOccurs="0" name="date" nillable="true" type="xs:date"/>
+                        <xs:element minOccurs="0" name="author" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="reciever" nillable="true" type="xs:string"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="positions" nillable="true" type="ax28:InvoicePosition"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="createInvoiceResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax28:Invoice"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="listInvoicesRequest"/>
+    <wsdl:message name="listInvoicesResponse">
+        <wsdl:part name="parameters" element="ns:listInvoicesResponse"/>
+    </wsdl:message>
+    <wsdl:message name="searchInvoiceRequest">
+        <wsdl:part name="parameters" element="ns:searchInvoice"/>
+    </wsdl:message>
+    <wsdl:message name="searchInvoiceResponse">
+        <wsdl:part name="parameters" element="ns:searchInvoiceResponse"/>
+    </wsdl:message>
+    <wsdl:message name="updateInvoiceRequest">
+        <wsdl:part name="parameters" element="ns:updateInvoice"/>
+    </wsdl:message>
+    <wsdl:message name="createInvoiceRequest">
+        <wsdl:part name="parameters" element="ns:createInvoice"/>
+    </wsdl:message>
+    <wsdl:message name="createInvoiceResponse">
+        <wsdl:part name="parameters" element="ns:createInvoiceResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="InvoiceSystemServicePortType">
+        <wsdl:operation name="listInvoices">
+            <wsdl:input message="ns:listInvoicesRequest" wsaw:Action="urn:listInvoices"/>
+            <wsdl:output message="ns:listInvoicesResponse" wsaw:Action="urn:listInvoicesResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="searchInvoice">
+            <wsdl:input message="ns:searchInvoiceRequest" wsaw:Action="urn:searchInvoice"/>
+            <wsdl:output message="ns:searchInvoiceResponse" wsaw:Action="urn:searchInvoiceResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="updateInvoice">
+            <wsdl:input message="ns:updateInvoiceRequest" wsaw:Action="urn:updateInvoice"/>
+        </wsdl:operation>
+        <wsdl:operation name="createInvoice">
+            <wsdl:input message="ns:createInvoiceRequest" wsaw:Action="urn:createInvoice"/>
+            <wsdl:output message="ns:createInvoiceResponse" wsaw:Action="urn:createInvoiceResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="InvoiceSystemServiceSoap11Binding" type="ns:InvoiceSystemServicePortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="listInvoices">
+            <soap:operation soapAction="urn:listInvoices" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="searchInvoice">
+            <soap:operation soapAction="urn:searchInvoice" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updateInvoice">
+            <soap:operation soapAction="urn:updateInvoice" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="createInvoice">
+            <soap:operation soapAction="urn:createInvoice" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="InvoiceSystemServiceSoap12Binding" type="ns:InvoiceSystemServicePortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="listInvoices">
+            <soap12:operation soapAction="urn:listInvoices" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="searchInvoice">
+            <soap12:operation soapAction="urn:searchInvoice" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updateInvoice">
+            <soap12:operation soapAction="urn:updateInvoice" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="createInvoice">
+            <soap12:operation soapAction="urn:createInvoice" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="InvoiceSystemServiceHttpBinding" type="ns:InvoiceSystemServicePortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="listInvoices">
+            <http:operation location="InvoiceSystemService/listInvoices"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="listInvoices"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="listInvoices"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="searchInvoice">
+            <http:operation location="InvoiceSystemService/searchInvoice"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="searchInvoice"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="searchInvoice"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updateInvoice">
+            <http:operation location="InvoiceSystemService/updateInvoice"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="updateInvoice"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="createInvoice">
+            <http:operation location="InvoiceSystemService/createInvoice"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="createInvoice"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="createInvoice"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="InvoiceSystemService">
+        <wsdl:port name="InvoiceSystemServiceHttpSoap11Endpoint" binding="ns:InvoiceSystemServiceSoap11Binding">
+            <soap:address location="http://localhost:8080/axis2/services/InvoiceSystemService.InvoiceSystemServiceHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="InvoiceSystemServiceHttpSoap12Endpoint" binding="ns:InvoiceSystemServiceSoap12Binding">
+            <soap12:address location="http://localhost:8080/axis2/services/InvoiceSystemService.InvoiceSystemServiceHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="InvoiceSystemServiceHttpEndpoint" binding="ns:InvoiceSystemServiceHttpBinding">
+            <http:address location="http://localhost:8080/axis2/services/InvoiceSystemService.InvoiceSystemServiceHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

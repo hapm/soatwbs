@@ -1,0 +1,36 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:ns="http://fhbuchen.teamwork.soa.fhbrs" xmlns:ax21="http://fhbuchen.teamwork.soa.fhbrs/xsd" xmlns:diag="http://thisdiagram" xmlns:Bill_Reciever="http://thisdiagram/Bill_Reciever" xmlns:Bill_System="http://thisdiagram/Bill_System" xmlns:Relations="http://thisdiagram/Relations" xmlns:ax23="http://util.java/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" targetNamespace="http://thisdiagram" bpdm:version="6000089" bpdm:canid="_JYP4QJYKEeCjIJNjCf4xhw" bpdm:displayName="diag">
+  <pnlk:partnerLinkType name="Bill_RecieverAndBill_System" bpdm:poolOneId="_JYRGYJYKEeCjIJNjCf4xhw" bpdm:poolOneIsExecutable="true" bpdm:poolOneName="Bill System" bpdm:poolTwoId="_lE9-sJZREeCQHLAOs6tIWQ" bpdm:poolTwoIsExecutable="false" bpdm:poolTwoName="Bill Reciever">
+    <pnlk:role name="Bill_System_for_Bill_Reciever" portType="Bill_System:ForBill_Reciever" bpdm:thisPoolId="_JYRGYJYKEeCjIJNjCf4xhw">
+      <wsdl:portType name="ForBill_Reciever">
+        <wsdl:operation name="EventStartMessage" bpdm:canid="_Jw63gJZ5EeCQHLAOs6tIWQ._xVQroJZREeCQHLAOs6tIWQ._zCTxYJZTEeCQHLAOs6tIWQ.">
+          <wsdl:input message="Bill_System:EventStartMessageRequest" name="EventStartMessage" bpdm:canid="_NnncQJZ5EeCQHLAOs6tIWQ" bpdm:senderId="_xVQroJZREeCQHLAOs6tIWQ" bpdm:receiverId="_Jw63gJZ5EeCQHLAOs6tIWQ" bpdm:senderName="create new Bill" bpdm:receiverName="EventStartMessage" bpdm:receiverPoolId="_JYRGYJYKEeCjIJNjCf4xhw" bpdm:dataobjectPointer="project:///Services/DataObjects.xsd?xsdtype={http://fhbuchen.teamwork.soa.fhbrs/xsd}Bill" bpdm:bodyPartElemName="EventStartMessageRequest" bpdm:bodyPartElemType="{http://fhbuchen.teamwork.soa.fhbrs/xsd}Bill"></wsdl:input>
+          <wsdl:output message="Bill_System:EventStartMessageResponse" name="EventStartMessageResponse" bpdm:canid="_z4UMUJZTEeCQHLAOs6tIWQ" bpdm:senderId="_zCTxYJZTEeCQHLAOs6tIWQ" bpdm:receiverId="_xVQroJZREeCQHLAOs6tIWQ" bpdm:senderName="EventEndMessage" bpdm:receiverName="create new Bill" bpdm:receiverPoolId="_lE9-sJZREeCQHLAOs6tIWQ" bpdm:bodyPartElemName="EventStartMessageResponse" bpdm:bodyPartElemType="xs:string"></wsdl:output>
+        </wsdl:operation>
+      </wsdl:portType>
+    </pnlk:role>
+  </pnlk:partnerLinkType>
+  <pnlk:partnerLinkType name="Bill_RecieverAndRelations" bpdm:poolOneId="_3bL4UJZiEeCQHLAOs6tIWQ" bpdm:poolOneIsExecutable="true" bpdm:poolOneName="Relations" bpdm:poolTwoId="_lE9-sJZREeCQHLAOs6tIWQ" bpdm:poolTwoIsExecutable="false" bpdm:poolTwoName="Bill Reciever">
+    <pnlk:role name="Relations_for_Bill_Reciever" portType="Relations:ForBill_Reciever" bpdm:thisPoolId="_3bL4UJZiEeCQHLAOs6tIWQ">
+      <wsdl:portType name="ForBill_Reciever">
+        <wsdl:operation name="EventStartMessage" bpdm:canid="_U8418JZTEeCQHLAOs6tIWQ._bBZi0JZjEeCQHLAOs6tIWQ._j1Nh0JZjEeCQHLAOs6tIWQ.">
+          <wsdl:input message="Relations:EventStartMessageRequest" name="EventStartMessage" bpdm:canid="_bB1nsJZjEeCQHLAOs6tIWQ" bpdm:senderId="_U8418JZTEeCQHLAOs6tIWQ" bpdm:receiverId="_bBZi0JZjEeCQHLAOs6tIWQ" bpdm:senderName="Ask for corresponding invoices" bpdm:receiverName="EventStartMessage" bpdm:receiverPoolId="_3bL4UJZiEeCQHLAOs6tIWQ" bpdm:bodyPartElemName="EventStartMessageRequest" bpdm:bodyPartElemType="xs:string"></wsdl:input>
+          <wsdl:output message="Relations:EventStartMessageResponse" name="EventStartMessageResponse" bpdm:canid="_ks-QQJZjEeCQHLAOs6tIWQ" bpdm:senderId="_j1Nh0JZjEeCQHLAOs6tIWQ" bpdm:receiverId="_U8418JZTEeCQHLAOs6tIWQ" bpdm:senderName="EventEndMessage" bpdm:receiverName="Ask for corresponding invoices" bpdm:receiverPoolId="_lE9-sJZREeCQHLAOs6tIWQ" bpdm:bodyPartElemName="EventStartMessageResponse" bpdm:bodyPartElemType="xs:string"></wsdl:output>
+        </wsdl:operation>
+      </wsdl:portType>
+    </pnlk:role>
+  </pnlk:partnerLinkType>
+  <pnlk:partnerLinkType name="Web_ServiceAndBill_System" bpdm:poolOneId="_jh63kJZREeCQHLAOs6tIWQ" bpdm:poolOneIsExecutable="false" bpdm:poolOneName="Web Service" bpdm:poolTwoId="_JYRGYJYKEeCjIJNjCf4xhw" bpdm:poolTwoIsExecutable="true" bpdm:poolTwoName="Bill System">
+    <pnlk:role name="Web_Service_for_Bill_System" portType="{http://thisdiagram/Web_Service}ForBill_System" bpdm:thisPoolId="_jh63kJZREeCQHLAOs6tIWQ">
+      <wsdl:portType name="ForBill_System">
+        <wsdl:operation name="createBill" bpdm:canid="_JYSUgJYKEeCjIJNjCf4xhw._o1FlEJZ3EeCQHLAOs6tIWQ." bpdm:dataobjectPointer="project:///Services/BillSystemService.wsdl?wsdloperationbound={http://fhbuchen.teamwork.soa.fhbrs}BillSystemService/BillSystemServiceHttpEndpoint/createBill">
+          <wsdl:input message="ns:createBillRequest" name="createBill" bpdm:canid="_5JC7wJZ3EeCQHLAOs6tIWQ" bpdm:senderId="_JYSUgJYKEeCjIJNjCf4xhw" bpdm:receiverId="_o1FlEJZ3EeCQHLAOs6tIWQ" bpdm:senderName="add new bill" bpdm:receiverName="createBill" bpdm:receiverPoolId="_jh63kJZREeCQHLAOs6tIWQ" bpdm:dataobjectPointer="project:///Services/BillSystemService.wsdl?messageForBoundOperation={http://fhbuchen.teamwork.soa.fhbrs}BillSystemService/BillSystemServiceHttpEndpoint/createBill/input/createBillRequest"></wsdl:input>
+          <wsdl:output message="ns:createBillResponse" name="createBillResponse" bpdm:canid="_7ZnQMJZ3EeCQHLAOs6tIWQ" bpdm:senderId="_o1FlEJZ3EeCQHLAOs6tIWQ" bpdm:receiverId="_JYSUgJYKEeCjIJNjCf4xhw" bpdm:senderName="createBill" bpdm:receiverName="add new bill" bpdm:receiverPoolId="_JYRGYJYKEeCjIJNjCf4xhw" bpdm:dataobjectPointer="project:///Services/BillSystemService.wsdl?messageForBoundOperation={http://fhbuchen.teamwork.soa.fhbrs}BillSystemService/BillSystemServiceHttpEndpoint/createBill/output/createBillResponse"></wsdl:output>
+        </wsdl:operation>
+      </wsdl:portType>
+    </pnlk:role>
+  </pnlk:partnerLinkType>
+  <pnlk:partnerLinkType name="Web_ServiceAndBill_SystemForPortBillSystemServiceHttpEndpointPlk" bpdm:canPlkId="_jh63kJZREeCQHLAOs6tIWQ-_JYRGYJYKEeCjIJNjCf4xhw">
+    <pnlk:role name="Web_Service_for_Bill_System" portType="ns:BillSystemServicePortType"></pnlk:role>
+  </pnlk:partnerLinkType>
+</wsdl:definitions>

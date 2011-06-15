@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ax29="http://fhbuchen.teamwork.soa.fhbrs/xsd" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://fhbuchen.teamwork.soa.fhbrs" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://fhbuchen.teamwork.soa.fhbrs">
+    <wsdl:types>
+        <xs:schema xmlns:ax210="http://fhbuchen.teamwork.soa.fhbrs/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://fhbuchen.teamwork.soa.fhbrs">
+            <xs:import namespace="http://fhbuchen.teamwork.soa.fhbrs/xsd" schemaLocation="DataObjects.xsd"/>
+            <xs:element name="updateRelation">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="user" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="rel" nillable="true" type="ax210:Relation"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="tracInvoice">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="invoice" nillable="true" type="ax210:Invoice"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="tracBill">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="bill" nillable="true" type="ax210:Bill"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="suggestRelationForInvoice">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="invoice" nillable="true" type="ax210:Invoice"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="suggestRelationForInvoiceResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax210:Relation"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="suggestRelationForBill">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="bill" nillable="true" type="ax210:Bill"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="suggestRelationForBillResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax210:Relation"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="listRelations">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="user" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="status" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="listRelationsResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax210:Relation"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="listInvoicesWithoutRelationResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax210:Invoice"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="listCheckableRelationsResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax210:Relation"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="listBillsWithoutRelationResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax210:Bill"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="listAllRelationsResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:anyType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="findRelationForInvoice">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="invoiceNr" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="findRelationForInvoiceResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax210:Relation"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="findRelationForBill">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="billNr" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="findRelationForBillResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax210:Relation"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="createRelation">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="bill" nillable="true" type="ax210:Bill"/>
+                        <xs:element minOccurs="0" name="invoice" nillable="true" type="ax210:Invoice"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="createRelationResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax210:Relation"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="checked">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="user" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="rel" nillable="true" type="ax210:Relation"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="listBillsWithoutRelationRequest"/>
+    <wsdl:message name="listBillsWithoutRelationResponse">
+        <wsdl:part name="parameters" element="ns:listBillsWithoutRelationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="listInvoicesWithoutRelationRequest"/>
+    <wsdl:message name="listInvoicesWithoutRelationResponse">
+        <wsdl:part name="parameters" element="ns:listInvoicesWithoutRelationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="listRelationsRequest">
+        <wsdl:part name="parameters" element="ns:listRelations"/>
+    </wsdl:message>
+    <wsdl:message name="listRelationsResponse">
+        <wsdl:part name="parameters" element="ns:listRelationsResponse"/>
+    </wsdl:message>
+    <wsdl:message name="findRelationForBillRequest">
+        <wsdl:part name="parameters" element="ns:findRelationForBill"/>
+    </wsdl:message>
+    <wsdl:message name="findRelationForBillResponse">
+        <wsdl:part name="parameters" element="ns:findRelationForBillResponse"/>
+    </wsdl:message>
+    <wsdl:message name="updateRelationRequest">
+        <wsdl:part name="parameters" element="ns:updateRelation"/>
+    </wsdl:message>
+    <wsdl:message name="createRelationRequest">
+        <wsdl:part name="parameters" element="ns:createRelation"/>
+    </wsdl:message>
+    <wsdl:message name="createRelationResponse">
+        <wsdl:part name="parameters" element="ns:createRelationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="suggestRelationForBillRequest">
+        <wsdl:part name="parameters" element="ns:suggestRelationForBill"/>
+    </wsdl:message>
+    <wsdl:message name="suggestRelationForBillResponse">
+        <wsdl:part name="parameters" element="ns:suggestRelationForBillResponse"/>
+    </wsdl:message>
+    <wsdl:message name="suggestRelationForInvoiceRequest">
+        <wsdl:part name="parameters" element="ns:suggestRelationForInvoice"/>
+    </wsdl:message>
+    <wsdl:message name="suggestRelationForInvoiceResponse">
+        <wsdl:part name="parameters" element="ns:suggestRelationForInvoiceResponse"/>
+    </wsdl:message>
+    <wsdl:message name="tracBillRequest">
+        <wsdl:part name="parameters" element="ns:tracBill"/>
+    </wsdl:message>
+    <wsdl:message name="listAllRelationsRequest"/>
+    <wsdl:message name="listAllRelationsResponse">
+        <wsdl:part name="parameters" element="ns:listAllRelationsResponse"/>
+    </wsdl:message>
+    <wsdl:message name="findRelationForInvoiceRequest">
+        <wsdl:part name="parameters" element="ns:findRelationForInvoice"/>
+    </wsdl:message>
+    <wsdl:message name="findRelationForInvoiceResponse">
+        <wsdl:part name="parameters" element="ns:findRelationForInvoiceResponse"/>
+    </wsdl:message>
+    <wsdl:message name="listCheckableRelationsRequest"/>
+    <wsdl:message name="listCheckableRelationsResponse">
+        <wsdl:part name="parameters" element="ns:listCheckableRelationsResponse"/>
+    </wsdl:message>
+    <wsdl:message name="checkedRequest">
+        <wsdl:part name="parameters" element="ns:checked"/>
+    </wsdl:message>
+    <wsdl:message name="tracInvoiceRequest">
+        <wsdl:part name="parameters" element="ns:tracInvoice"/>
+    </wsdl:message>
+    <wsdl:portType name="RelationSystemServicePortType">
+        <wsdl:operation name="listBillsWithoutRelation">
+            <wsdl:input message="ns:listBillsWithoutRelationRequest" wsaw:Action="urn:listBillsWithoutRelation"/>
+            <wsdl:output message="ns:listBillsWithoutRelationResponse" wsaw:Action="urn:listBillsWithoutRelationResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="listInvoicesWithoutRelation">
+            <wsdl:input message="ns:listInvoicesWithoutRelationRequest" wsaw:Action="urn:listInvoicesWithoutRelation"/>
+            <wsdl:output message="ns:listInvoicesWithoutRelationResponse" wsaw:Action="urn:listInvoicesWithoutRelationResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="listRelations">
+            <wsdl:input message="ns:listRelationsRequest" wsaw:Action="urn:listRelations"/>
+            <wsdl:output message="ns:listRelationsResponse" wsaw:Action="urn:listRelationsResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="findRelationForBill">
+            <wsdl:input message="ns:findRelationForBillRequest" wsaw:Action="urn:findRelationForBill"/>
+            <wsdl:output message="ns:findRelationForBillResponse" wsaw:Action="urn:findRelationForBillResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="updateRelation">
+            <wsdl:input message="ns:updateRelationRequest" wsaw:Action="urn:updateRelation"/>
+        </wsdl:operation>
+        <wsdl:operation name="createRelation">
+            <wsdl:input message="ns:createRelationRequest" wsaw:Action="urn:createRelation"/>
+            <wsdl:output message="ns:createRelationResponse" wsaw:Action="urn:createRelationResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="suggestRelationForBill">
+            <wsdl:input message="ns:suggestRelationForBillRequest" wsaw:Action="urn:suggestRelationForBill"/>
+            <wsdl:output message="ns:suggestRelationForBillResponse" wsaw:Action="urn:suggestRelationForBillResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="suggestRelationForInvoice">
+            <wsdl:input message="ns:suggestRelationForInvoiceRequest" wsaw:Action="urn:suggestRelationForInvoice"/>
+            <wsdl:output message="ns:suggestRelationForInvoiceResponse" wsaw:Action="urn:suggestRelationForInvoiceResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="tracBill">
+            <wsdl:input message="ns:tracBillRequest" wsaw:Action="urn:tracBill"/>
+        </wsdl:operation>
+        <wsdl:operation name="listAllRelations">
+            <wsdl:input message="ns:listAllRelationsRequest" wsaw:Action="urn:listAllRelations"/>
+            <wsdl:output message="ns:listAllRelationsResponse" wsaw:Action="urn:listAllRelationsResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="findRelationForInvoice">
+            <wsdl:input message="ns:findRelationForInvoiceRequest" wsaw:Action="urn:findRelationForInvoice"/>
+            <wsdl:output message="ns:findRelationForInvoiceResponse" wsaw:Action="urn:findRelationForInvoiceResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="listCheckableRelations">
+            <wsdl:input message="ns:listCheckableRelationsRequest" wsaw:Action="urn:listCheckableRelations"/>
+            <wsdl:output message="ns:listCheckableRelationsResponse" wsaw:Action="urn:listCheckableRelationsResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="checked">
+            <wsdl:input message="ns:checkedRequest" wsaw:Action="urn:checked"/>
+        </wsdl:operation>
+        <wsdl:operation name="tracInvoice">
+            <wsdl:input message="ns:tracInvoiceRequest" wsaw:Action="urn:tracInvoice"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="RelationSystemServiceSoap11Binding" type="ns:RelationSystemServicePortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="listBillsWithoutRelation">
+            <soap:operation soapAction="urn:listBillsWithoutRelation" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="listInvoicesWithoutRelation">
+            <soap:operation soapAction="urn:listInvoicesWithoutRelation" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="listRelations">
+            <soap:operation soapAction="urn:listRelations" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updateRelation">
+            <soap:operation soapAction="urn:updateRelation" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="findRelationForBill">
+            <soap:operation soapAction="urn:findRelationForBill" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="createRelation">
+            <soap:operation soapAction="urn:createRelation" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="suggestRelationForBill">
+            <soap:operation soapAction="urn:suggestRelationForBill" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="tracBill">
+            <soap:operation soapAction="urn:tracBill" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="suggestRelationForInvoice">
+            <soap:operation soapAction="urn:suggestRelationForInvoice" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="listAllRelations">
+            <soap:operation soapAction="urn:listAllRelations" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="listCheckableRelations">
+            <soap:operation soapAction="urn:listCheckableRelations" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="findRelationForInvoice">
+            <soap:operation soapAction="urn:findRelationForInvoice" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="checked">
+            <soap:operation soapAction="urn:checked" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="tracInvoice">
+            <soap:operation soapAction="urn:tracInvoice" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="RelationSystemServiceSoap12Binding" type="ns:RelationSystemServicePortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="listBillsWithoutRelation">
+            <soap12:operation soapAction="urn:listBillsWithoutRelation" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="listInvoicesWithoutRelation">
+            <soap12:operation soapAction="urn:listInvoicesWithoutRelation" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="listRelations">
+            <soap12:operation soapAction="urn:listRelations" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updateRelation">
+            <soap12:operation soapAction="urn:updateRelation" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="findRelationForBill">
+            <soap12:operation soapAction="urn:findRelationForBill" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="createRelation">
+            <soap12:operation soapAction="urn:createRelation" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="suggestRelationForBill">
+            <soap12:operation soapAction="urn:suggestRelationForBill" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="tracBill">
+            <soap12:operation soapAction="urn:tracBill" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="suggestRelationForInvoice">
+            <soap12:operation soapAction="urn:suggestRelationForInvoice" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="listAllRelations">
+            <soap12:operation soapAction="urn:listAllRelations" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="listCheckableRelations">
+            <soap12:operation soapAction="urn:listCheckableRelations" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="findRelationForInvoice">
+            <soap12:operation soapAction="urn:findRelationForInvoice" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="checked">
+            <soap12:operation soapAction="urn:checked" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="tracInvoice">
+            <soap12:operation soapAction="urn:tracInvoice" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="RelationSystemServiceHttpBinding" type="ns:RelationSystemServicePortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="listBillsWithoutRelation">
+            <http:operation location="RelationSystemService/listBillsWithoutRelation"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="listBillsWithoutRelation"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="listBillsWithoutRelation"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="listInvoicesWithoutRelation">
+            <http:operation location="RelationSystemService/listInvoicesWithoutRelation"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="listInvoicesWithoutRelation"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="listInvoicesWithoutRelation"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="listRelations">
+            <http:operation location="RelationSystemService/listRelations"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="listRelations"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="listRelations"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updateRelation">
+            <http:operation location="RelationSystemService/updateRelation"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="updateRelation"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="findRelationForBill">
+            <http:operation location="RelationSystemService/findRelationForBill"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="findRelationForBill"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="findRelationForBill"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="createRelation">
+            <http:operation location="RelationSystemService/createRelation"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="createRelation"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="createRelation"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="suggestRelationForBill">
+            <http:operation location="RelationSystemService/suggestRelationForBill"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="suggestRelationForBill"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="suggestRelationForBill"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="tracBill">
+            <http:operation location="RelationSystemService/tracBill"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="tracBill"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="suggestRelationForInvoice">
+            <http:operation location="RelationSystemService/suggestRelationForInvoice"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="suggestRelationForInvoice"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="suggestRelationForInvoice"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="listAllRelations">
+            <http:operation location="RelationSystemService/listAllRelations"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="listAllRelations"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="listAllRelations"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="listCheckableRelations">
+            <http:operation location="RelationSystemService/listCheckableRelations"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="listCheckableRelations"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="listCheckableRelations"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="findRelationForInvoice">
+            <http:operation location="RelationSystemService/findRelationForInvoice"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="findRelationForInvoice"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="findRelationForInvoice"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="checked">
+            <http:operation location="RelationSystemService/checked"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="checked"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="tracInvoice">
+            <http:operation location="RelationSystemService/tracInvoice"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="tracInvoice"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="RelationSystemService">
+        <wsdl:port name="RelationSystemServiceHttpSoap11Endpoint" binding="ns:RelationSystemServiceSoap11Binding">
+            <soap:address location="http://localhost:8080/axis2/services/RelationSystemService.RelationSystemServiceHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="RelationSystemServiceHttpSoap12Endpoint" binding="ns:RelationSystemServiceSoap12Binding">
+            <soap12:address location="http://localhost:8080/axis2/services/RelationSystemService.RelationSystemServiceHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="RelationSystemServiceHttpEndpoint" binding="ns:RelationSystemServiceHttpBinding">
+            <http:address location="http://localhost:8080/axis2/services/RelationSystemService.RelationSystemServiceHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

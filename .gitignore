@@ -1,3 +1,5 @@
 .metadata/
-*/build/
+*/build/*
 */WEB-INF/*
+*/FhBuchen/*
+*/WebContent/*

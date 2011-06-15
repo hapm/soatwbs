@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://fhbuchen.teamwork.soa.fhbrs"
+	xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+	xmlns:ax23="http://util.java/xsd" xmlns:ax21="http://fhbuchen.teamwork.soa.fhbrs/xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+	targetNamespace="http://fhbuchen.teamwork.soa.fhbrs">
+	<wsdl:types>
+		<xs:schema attributeFormDefault="qualified"
+			elementFormDefault="qualified" targetNamespace="http://util.java/xsd">
+			<xs:complexType name="Set">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="empty" type="xs:boolean" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+		<xs:schema xmlns:ax24="http://util.java/xsd"
+			xmlns:ax22="http://fhbuchen.teamwork.soa.fhbrs/xsd"
+			attributeFormDefault="qualified" elementFormDefault="qualified"
+			targetNamespace="http://fhbuchen.teamwork.soa.fhbrs">
+			<xs:import namespace="http://fhbuchen.teamwork.soa.fhbrs/xsd"
+				schemaLocation="DataObjects.xsd" />
+			<xs:import namespace="http://util.java/xsd" />
+			<xs:element name="updateBill">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="b" nillable="true"
+							type="ax22:Bill" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="searchBill">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="billNr" type="xs:int" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="searchBillResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="return" nillable="true"
+							type="ax22:Bill" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="listBillsResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="return"
+							nillable="true" type="ax22:Bill" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="createBill">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="billNr" type="xs:int" />
+						<xs:element minOccurs="0" name="author" nillable="true"
+							type="xs:string" />
+						<xs:element minOccurs="0" name="reciever" nillable="true"
+							type="xs:string" />
+						<xs:element minOccurs="0" name="positions" nillable="true"
+							type="ax24:Set" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="createBillResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="return" nillable="true"
+							type="ax22:Bill" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="searchBillRequest">
+		<wsdl:part name="parameters" element="ns:searchBill" />
+	</wsdl:message>
+	<wsdl:message name="searchBillResponse">
+		<wsdl:part name="parameters" element="ns:searchBillResponse" />
+	</wsdl:message>
+	<wsdl:message name="createBillRequest">
+		<wsdl:part name="parameters" element="ns:createBill" />
+	</wsdl:message>
+	<wsdl:message name="createBillResponse">
+		<wsdl:part name="parameters" element="ns:createBillResponse" />
+	</wsdl:message>
+	<wsdl:message name="listBillsRequest" />
+	<wsdl:message name="listBillsResponse">
+		<wsdl:part name="parameters" element="ns:listBillsResponse" />
+	</wsdl:message>
+	<wsdl:message name="updateBillRequest">
+		<wsdl:part name="parameters" element="ns:updateBill" />
+	</wsdl:message>
+	<wsdl:portType name="BillSystemServicePortType">
+		<wsdl:operation name="searchBill">
+			<wsdl:input message="ns:searchBillRequest" wsaw:Action="urn:searchBill" />
+			<wsdl:output message="ns:searchBillResponse" wsaw:Action="urn:searchBillResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="createBill">
+			<wsdl:input message="ns:createBillRequest" wsaw:Action="urn:createBill" />
+			<wsdl:output message="ns:createBillResponse" wsaw:Action="urn:createBillResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="listBills">
+			<wsdl:input message="ns:listBillsRequest" wsaw:Action="urn:listBills" />
+			<wsdl:output message="ns:listBillsResponse" wsaw:Action="urn:listBillsResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="updateBill">
+			<wsdl:input message="ns:updateBillRequest" wsaw:Action="urn:updateBill" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="BillSystemServiceSoap11Binding" type="ns:BillSystemServicePortType">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="document" />
+		<wsdl:operation name="searchBill">
+			<soap:operation soapAction="urn:searchBill" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="listBills">
+			<soap:operation soapAction="urn:listBills" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="createBill">
+			<soap:operation soapAction="urn:createBill" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateBill">
+			<soap:operation soapAction="urn:updateBill" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="BillSystemServiceSoap12Binding" type="ns:BillSystemServicePortType">
+		<soap12:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="document" />
+		<wsdl:operation name="searchBill">
+			<soap12:operation soapAction="urn:searchBill" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="listBills">
+			<soap12:operation soapAction="urn:listBills" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="createBill">
+			<soap12:operation soapAction="urn:createBill" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateBill">
+			<soap12:operation soapAction="urn:updateBill" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="BillSystemServiceHttpBinding" type="ns:BillSystemServicePortType">
+		<http:binding verb="POST" />
+		<wsdl:operation name="searchBill">
+			<http:operation location="BillSystemService/searchBill" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="searchBill" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" part="searchBill" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="listBills">
+			<http:operation location="BillSystemService/listBills" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="listBills" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" part="listBills" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="createBill">
+			<http:operation location="BillSystemService/createBill" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="createBill" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" part="createBill" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateBill">
+			<http:operation location="BillSystemService/updateBill" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="updateBill" />
+			</wsdl:input>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="BillSystemService">
+		<wsdl:port name="BillSystemServiceHttpSoap11Endpoint"
+			binding="ns:BillSystemServiceSoap11Binding">
+			<soap:address
+				location="http://192.168.19.182:8080/axis2/services/BillSystemService.BillSystemServiceHttpSoap11Endpoint/" />
+		</wsdl:port>
+		<wsdl:port name="BillSystemServiceHttpSoap12Endpoint"
+			binding="ns:BillSystemServiceSoap12Binding">
+			<soap12:address
+				location="http://192.168.19.182:8080/axis2/services/BillSystemService.BillSystemServiceHttpSoap12Endpoint/" />
+		</wsdl:port>
+		<wsdl:port name="BillSystemServiceHttpEndpoint" binding="ns:BillSystemServiceHttpBinding">
+			<http:address
+				location="http://192.168.19.182:8080/axis2/services/BillSystemService.BillSystemServiceHttpEndpoint/" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

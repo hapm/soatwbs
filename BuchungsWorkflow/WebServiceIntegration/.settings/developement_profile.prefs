@@ -1,4 +1,7 @@
 
+behind_proxy=false
+bundleExportPath=C\:/Users/markus/Documents/Studium/SOA/Buchungssystem/BuchungsWorkflow/WebServiceIntegration
+deploy_bundleShouldBeArchived=false
 deploy_bundleShouldBeDeployed=true
 deploy_gi_serverUrl=http\://localhost\:8080/gi
 deploy_serverUrl=http\://localhost\:8080/ode

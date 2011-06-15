@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="qualified"
+	elementFormDefault="qualified" targetNamespace="http://fhbuchen.teamwork.soa.fhbrs/xsd"
+	xmlns="http://fhbuchen.teamwork.soa.fhbrs/xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" >
+            <xs:complexType name="Relation">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="bill" nillable="true" type="Bill"/>
+                    <xs:element minOccurs="0" name="creator" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="doubleChecker" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="invoice" nillable="true" type="Invoice"/>
+                    <xs:element minOccurs="0" name="status" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="Bill">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="author" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billId" type="xs:int"/>
+                    <xs:element minOccurs="0" name="billNr" type="xs:int"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="positions" nillable="true" type="BillPosition"/>
+                    <xs:element minOccurs="0" name="totalAmount" type="xs:double"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="BillPosition">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="amount" type="xs:double"/>
+                    <xs:element minOccurs="0" name="articleNr" type="xs:int"/>
+                    <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="posNum" type="xs:int"/>
+                    <xs:element minOccurs="0" name="quantity" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="Invoice">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="author" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="invoiceNr" type="xs:int"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="positions" nillable="true" type="InvoicePosition"/>
+                    <xs:element minOccurs="0" name="reciever" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="InvoicePosition">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="articleNr" type="xs:int"/>
+                    <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="posNum" type="xs:int"/>
+                    <xs:element minOccurs="0" name="quantity" type="xs:int"/>
+                    <xs:element minOccurs="0" name="weight" type="xs:double"/>
+                </xs:sequence>
+            </xs:complexType>
+</xs:schema>
