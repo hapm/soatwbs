@@ -1,0 +1,35 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:WS1_Process="http://thisdiagram/WS1_Process" xmlns:ax26="http://fhbuchen.teamwork.soa.fhbrs/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns="http://fhbuchen.teamwork.soa.fhbrs" xmlns:this="http://thisdiagram/Webservices" xmlns:diag="http://thisdiagram" xmlns:ax27="http://util.java/xsd" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Webservices">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/WS1_Process" bpdm:prefix="WS1_Process" bpdm:comment="contrib=&apos;partner-pool:///_uy2GEI05EeCEyKhnz1Mjkg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://fhbuchen.teamwork.soa.fhbrs/xsd" bpdm:prefix="ax26" bpdm:comment="contrib=&apos;project:///Services/InvoiceSystemService.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://fhbuchen.teamwork.soa.fhbrs" bpdm:prefix="ns" bpdm:comment="contrib=&apos;project:///Services/InvoiceSystemService.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Webservices" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_uy2GEI05EeCEyKhnz1Mjkg"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://util.java/xsd" bpdm:prefix="ax27" bpdm:comment="contrib=&apos;project:///Services/InvoiceSystemService.wsdl"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="project:///Services/InvoiceSystemService.wsdl"/>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_uy2GEI05EeCEyKhnz1Mjkg" bpdm:label="WS1_Process"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="Webservices" bpdm:ID="_T1Qv8JBHEeCl6sqzFsrsmA">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="wS1_ProcessAndWebservicesForPortInvoiceSystemServiceHttpEndpointPlkVar" partnerLinkType="diag:WS1_ProcessAndWebservicesForPortInvoiceSystemServiceHttpEndpointPlk" myRole="Webservices_for_WS1_Process" bpdm:enableSharing="false" bpdm:providedService="ns:InvoiceSystemService" bpdm:providedPort="InvoiceSystemServiceHttpSoap11Endpoint" bpdm:provideSOAPAddress="http://localhost:8080/Buchungssystem/services/InvoiceSystemService.InvoiceSystemServiceHttpSoap11Endpoint/" bpdm:providedIsDefault="true" bpdm:clientTasks="_T1Qv8JBHEeCl6sqzFsrsmA:_FLMZIJBQEeCZKMGX95a_FA" bpdm:isManaged="true" bpdm:otherPoolId="_uy2GEI05EeCEyKhnz1Mjkg"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="nsCreateInvoiceRequestMsg" messageType="ns:createInvoiceRequest" binding="ns:InvoiceSystemServiceHttpBinding" operation="createInvoice" opMsgType="0" bpdm:id="_HEXhQJBQEeCZKMGX95a_FA" bpdm:messageIds="inc:_HDvPIJBQEeCZKMGX95a_FA"/>
+            <bpel:variable name="nsCreateInvoiceResponseMsg" messageType="ns:createInvoiceResponse" binding="ns:InvoiceSystemServiceHttpBinding" operation="createInvoice" opMsgType="1" bpdm:id="_HorvQJBQEeCZKMGX95a_FA" bpdm:messageIds=" out:_HoIVoJBQEeCZKMGX95a_FA">
+                <bpel:from bpdm:toPart="parameters">
+                    <bpel:literal bpdm:linkedMessageType="ns:createInvoiceResponse" bpdm:linkedPart="parameters" bpdm:binding="ns:InvoiceSystemServiceHttpBinding" bpdm:opMsgType="1" bpdm:operation="createInvoice"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask operation="createInvoice" partnerLink="wS1_ProcessAndWebservicesForPortInvoiceSystemServiceHttpEndpointPlkVar" portType="ns:InvoiceSystemServicePortType" isMyRole="true" enableSharing="false" bpdm:label="createInvoice" bpdm:ID="_FLMZIJBQEeCZKMGX95a_FA">
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="nsCreateInvoiceRequestMsg" bpdm:msgVarScopeId="_T1Qv8JBHEeCl6sqzFsrsmA" bpdm:variableIsManaged="true" bpdm:messageType="ns:createInvoiceRequest" bpdm:binding="ns:InvoiceSystemServiceHttpBinding" bpdm:ID="_HDvPIJBQEeCZKMGX95a_FA"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="nsCreateInvoiceResponseMsg" bpdm:msgVarScopeId="_T1Qv8JBHEeCl6sqzFsrsmA" bpdm:variableIsManaged="true" bpdm:messageType="ns:createInvoiceResponse" bpdm:binding="ns:InvoiceSystemServiceHttpBinding" bpdm:ID="_HoIVoJBQEeCZKMGX95a_FA"></bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>
