@@ -28,9 +28,9 @@ public class InvoiceSystem {
 	}
 	
 	@WebMethod
-	public Invoice createInvoice(int billNr, Date date, String author, String reciever,
+	public Invoice createInvoice(int invoiceNr, Date date, String author, String reciever,
 			InvoicePosition[] positions){
-		Invoice i = new Invoice(billNr, date,author,reciever,positions);
+		Invoice i = new Invoice(invoiceNr, date,author,reciever,positions);
 		return i;
 	}
 }

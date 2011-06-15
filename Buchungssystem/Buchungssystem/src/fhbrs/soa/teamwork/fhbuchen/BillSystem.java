@@ -1,24 +1,20 @@
 package fhbrs.soa.teamwork.fhbuchen;
 
-import java.util.Date;
-import java.util.HashSet;
+import java.util.ArrayList;
 import java.util.Set;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
 
 @WebService
 public class BillSystem {
-	private EntityManager em;
+	//private EntityManager em;
+	private ArrayList<Bill> bills;
 	
 	public BillSystem() {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("Buchungssystem");
-		em = emf.createEntityManager();
+		//EntityManagerFactory emf = Persistence.createEntityManagerFactory("Buchungssystem");
+		//em = emf.createEntityManager();
+		bills = new ArrayList<Bill>();
 	} 
 	
 	@WebMethod
@@ -28,18 +24,19 @@ public class BillSystem {
 
 	@WebMethod
 	public Bill[] listBills() {
-		TypedQuery<Bill> q = em.createQuery("SELECT b FROM Bill b", Bill.class);
-		return q.getResultList().toArray(new Bill[0]);
+		//TypedQuery<Bill> q = em.createQuery("SELECT b FROM Bill b", Bill.class);
+		return bills.toArray(new Bill[0]);
 	}
 
 	@WebMethod
-	public Bill createBill(int billNr, Date date, String author, String reciever,
+	public Bill createBill(int billNr, /*Date date,*/ String author, String reciever,
 			Set<BillPosition> positions) {
-		EntityTransaction tr = em.getTransaction();
-		tr.begin();
-		Bill b = new Bill(billNr, date, author, reciever, positions.toArray(new BillPosition[0]));
-		em.persist(b);
-		tr.commit();
+		//EntityTransaction tr = em.getTransaction();
+		//tr.begin();
+		Bill b = new Bill(billNr, /*date,*/ author, reciever, positions.toArray(new BillPosition[0]));
+		bills.add(b);
+		//em.persist(b);
+		//tr.commit();
 		return b;
 	}
 	

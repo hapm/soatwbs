@@ -1,6 +1,7 @@
 package fhbrs.soa.teamwork.fhbuchen;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -20,14 +21,14 @@ public class RelationSystem {
 	private List<Bill> trackedBills;
 	private List<Invoice> trackedInvoices;
 	private List<Relation> relations;
-	private EntityManager em;
+	//private EntityManager em;
 	
 	public RelationSystem() {
 		trackedBills = new LinkedList<Bill>();
 		trackedInvoices = new LinkedList<Invoice>();
 		relations = new LinkedList<Relation>();
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("localhost");
-		em = emf.createEntityManager();
+		//EntityManagerFactory emf = Persistence.createEntityManagerFactory("localhost");
+		//em = emf.createEntityManager();
 	}
 	
 	@WebMethod
@@ -41,7 +42,7 @@ public class RelationSystem {
 	}
 	
 	@WebMethod
-	public Relation suggestRelation(Invoice invoice) {
+	public Relation suggestRelationForInvoice(Invoice invoice) {
 		Relation result;
 		result = findRelationForInvoice(invoice.getInvoiceNr());
 		
@@ -59,7 +60,7 @@ public class RelationSystem {
 	}
 
 	@WebMethod
-	public Relation suggestRelation(Bill bill) {
+	public Relation suggestRelationForBill(Bill bill) {
 		Relation result;
 		result = findRelationForInvoice(bill.getBillNr());
 		
@@ -180,6 +181,14 @@ public class RelationSystem {
 	@WebMethod
 	public Bill[] listBillsWithoutRelation() {
 		return trackedBills.toArray(new Bill[0]);
+	}
+	
+	@WebMethod
+	public Relation[] listCheckableRelations() {
+		ArrayList<Relation> relations = new ArrayList<Relation>();
+		relations.addAll(Arrays.asList(listRelations("", Relation.STATUS_UNCHECKED)));
+		relations.addAll(Arrays.asList(listRelations("", Relation.STATUS_CHECKED)));
+		return relations.toArray(new Relation[0]);
 	}
 
 	/**
