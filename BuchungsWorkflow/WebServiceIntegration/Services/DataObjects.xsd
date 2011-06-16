@@ -15,10 +15,9 @@
             <xs:complexType name="Bill">
                 <xs:sequence>
                     <xs:element minOccurs="0" name="author" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="receiver" nillable="true" type="xs:string"/>
                     <xs:element minOccurs="0" name="billId" type="xs:int"/>
                     <xs:element minOccurs="0" name="billNr" type="xs:int"/>
-                    <xs:element maxOccurs="unbounded" minOccurs="0" name="positions" nillable="true" type="BillPosition"/>
-                    <xs:element minOccurs="0" name="totalAmount" type="xs:double"/>
                 </xs:sequence>
             </xs:complexType>
             <xs:complexType name="BillPosition">

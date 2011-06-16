@@ -19,8 +19,8 @@
             <bpel:partnerLink name="webServiceAndWFForPortBillSystemServiceHttpEndpointPlkVar" partnerLinkType="diag:WebServiceAndWFForPortBillSystemServiceHttpEndpointPlk" myRole="WebService_for_WF" bpdm:enableSharing="false" bpdm:providedService="ns:BillSystemService" bpdm:providedPort="BillSystemServiceHttpSoap11Endpoint" bpdm:provideSOAPAddress="http://192.168.19.182:8080/axis2/services/BillSystemService.BillSystemServiceHttpSoap11Endpoint/" bpdm:providedIsDefault="true" bpdm:clientTasks="_XgcuUJaUEeCQHLAOs6tIWQ:_a0utEJaVEeCQHLAOs6tIWQ" bpdm:isManaged="true" bpdm:otherPoolId="_V-NfgJaUEeCQHLAOs6tIWQ"/>
         </bpel:partnerLinks>
         <bpel:variables>
-            <bpel:variable name="nsCreateBillRequestMsg" messageType="ns:createBillRequest" binding="ns:BillSystemServiceHttpBinding" operation="createBill" opMsgType="0" bpdm:id="_TduN0JaWEeCQHLAOs6tIWQ" bpdm:messageIds="inc:_TcllYJaWEeCQHLAOs6tIWQ"/>
-            <bpel:variable name="nsCreateBillResponseMsg" messageType="ns:createBillResponse" binding="ns:BillSystemServiceHttpBinding" operation="createBill" opMsgType="1" bpdm:id="_T7sjQJaWEeCQHLAOs6tIWQ" bpdm:messageIds=" out:_T6tEwJaWEeCQHLAOs6tIWQ">
+            <bpel:variable name="nsCreateBillRequestMsg" messageType="ns:createBillRequest" binding="ns:BillSystemServiceHttpBinding" operation="createBill" opMsgType="0" bpdm:id="_JxLcgJdFEeCyMPRnsUTQww" bpdm:messageIds="inc:_Jwe48JdFEeCyMPRnsUTQww"/>
+            <bpel:variable name="nsCreateBillResponseMsg" messageType="ns:createBillResponse" binding="ns:BillSystemServiceHttpBinding" operation="createBill" opMsgType="1" bpdm:id="_PLr9YJdFEeCyMPRnsUTQww" bpdm:messageIds=" out:_PLGHgJdFEeCyMPRnsUTQww">
                 <bpel:from bpdm:toPart="parameters">
                     <bpel:literal bpdm:linkedMessageType="ns:createBillResponse" bpdm:linkedPart="parameters" bpdm:binding="ns:BillSystemServiceHttpBinding" bpdm:opMsgType="1" bpdm:operation="createBill"></bpel:literal>
                 </bpel:from>
@@ -28,8 +28,8 @@
         </bpel:variables>
         <bpel:sequence>
             <bpdm:messagingtask operation="createBill" partnerLink="webServiceAndWFForPortBillSystemServiceHttpEndpointPlkVar" portType="ns:BillSystemServicePortType" isMyRole="true" enableSharing="false" bpdm:label="createBill" bpdm:ID="_a0utEJaVEeCQHLAOs6tIWQ">
-                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="nsCreateBillRequestMsg" bpdm:msgVarScopeId="_XgcuUJaUEeCQHLAOs6tIWQ" bpdm:variableIsManaged="true" bpdm:messageType="ns:createBillRequest" bpdm:binding="ns:BillSystemServiceHttpBinding" bpdm:ID="_TcllYJaWEeCQHLAOs6tIWQ"></bpdm:linkset>
-                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="nsCreateBillResponseMsg" bpdm:msgVarScopeId="_XgcuUJaUEeCQHLAOs6tIWQ" bpdm:variableIsManaged="true" bpdm:messageType="ns:createBillResponse" bpdm:binding="ns:BillSystemServiceHttpBinding" bpdm:ID="_T6tEwJaWEeCQHLAOs6tIWQ"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="receive" bpdm:messageVariable="nsCreateBillRequestMsg" bpdm:msgVarScopeId="_XgcuUJaUEeCQHLAOs6tIWQ" bpdm:variableIsManaged="true" bpdm:messageType="ns:createBillRequest" bpdm:binding="ns:BillSystemServiceHttpBinding" bpdm:ID="_Jwe48JdFEeCyMPRnsUTQww"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="reply" bpdm:messageVariable="nsCreateBillResponseMsg" bpdm:msgVarScopeId="_XgcuUJaUEeCQHLAOs6tIWQ" bpdm:variableIsManaged="true" bpdm:messageType="ns:createBillResponse" bpdm:binding="ns:BillSystemServiceHttpBinding" bpdm:ID="_PLGHgJdFEeCyMPRnsUTQww"></bpdm:linkset>
             </bpdm:messagingtask>
         </bpel:sequence>
     </bpel:scope>

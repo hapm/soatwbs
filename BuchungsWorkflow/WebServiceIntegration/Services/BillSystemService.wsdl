@@ -226,16 +226,16 @@
 		<wsdl:port name="BillSystemServiceHttpSoap11Endpoint"
 			binding="ns:BillSystemServiceSoap11Binding">
 			<soap:address
-				location="http://192.168.19.182:8080/axis2/services/BillSystemService.BillSystemServiceHttpSoap11Endpoint/" />
+				location="http://localhost:8080/axis2/services/BillSystemService.BillSystemServiceHttpSoap11Endpoint/" />
 		</wsdl:port>
 		<wsdl:port name="BillSystemServiceHttpSoap12Endpoint"
 			binding="ns:BillSystemServiceSoap12Binding">
 			<soap12:address
-				location="http://192.168.19.182:8080/axis2/services/BillSystemService.BillSystemServiceHttpSoap12Endpoint/" />
+				location="http://localhost:8080/axis2/services/BillSystemService.BillSystemServiceHttpSoap12Endpoint/" />
 		</wsdl:port>
 		<wsdl:port name="BillSystemServiceHttpEndpoint" binding="ns:BillSystemServiceHttpBinding">
 			<http:address
-				location="http://192.168.19.182:8080/axis2/services/BillSystemService.BillSystemServiceHttpEndpoint/" />
+				location="http://localhost:8080/axis2/services/BillSystemService.BillSystemServiceHttpEndpoint/" />
 		</wsdl:port>
 	</wsdl:service>
 </wsdl:definitions>
